@@ -1,0 +1,2120 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="author" content="">
+    <meta name="keywords" content="">
+    <meta name="description" content="">
+    <meta name="robots" content="noindex">
+    <title>Formulario Fichas </title>
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+        integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <!--libreria para el icon de la luna y el sol-->
+
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <!-- libreria bootstrap -->
+
+    <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
+
+    <script src="app.js"></script> <!-- todo lo que tiene que ver con la logica del pdf-->
+
+
+    <script src="JS FichaJuridic/arreglos.js"></script> <!-- funciones de campos-->
+    <script src="JS FichaJuridic/agregarCampos.js"></script> <!-- funciones para agregar campos-->
+    <script src="JS FichaJuridic/mostrarDefinicion.js"></script> <!-- Mostrar definiciones de los textos-->
+    <script src="JS FichaJuridic/recuperarDatos.js"></script> <!-- Recuperar datos de Accionistas y Benef finales-->
+
+    <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
+    <link rel="stylesheet" href="css/modoOscuro.css"><!--Modo Oscuro CSS-->
+    <link rel="stylesheet" href="JS FichaJuridic/textoAdicional.css">
+
+</head>
+
+<body>
+    <style>
+        body {
+            zoom: 100%;
+            font-family: Arial, Helvetica, sans-serif;
+            transition: all 1s ease;
+            /*transition a modo oscuro*/
+        }
+
+        .nav-item {
+            margin-left: 15px;
+        }
+
+        .navbar {
+            font-size: 120%;
+            display: flex;
+            position: fixed;
+            z-index: 1000;
+            /* Ajustar según sea necesario para estar por encima de la herramienta de desarrollo */
+        }
+
+
+        .razon {
+            width: 10ch;
+        }
+
+        h1 {
+            text-align: center;
+        }
+
+        h2 {
+            text-align: center;
+        }
+
+        p {
+            font-size: 115%;
+            text-align: justify;
+        }
+
+        .row {
+            font-size: large;
+        }
+
+        textarea {
+            background-color: #dddddd;
+            color: #3e3232;
+            padding: 0.75em;
+            /* Reducido el padding */
+            border-radius: 5px;
+            /* Reducido el border-radius */
+            border: 1px solid #ccc;
+            /* Reducido el grosor del borde */
+            outline: none;
+            font-family: "Heebo", sans-serif;
+            font-weight: 500;
+            font-size: 16px;
+            line-height: 1.4;
+            transition: all 0.2s;
+        }
+
+        textarea:hover {
+            cursor: pointer;
+            background-color: #eeeeee;
+        }
+
+        textarea:focus {
+            cursor: text;
+            color: #333333;
+            background-color: white;
+            border-color: #333333;
+        }
+
+        th {
+            border: solid;
+        }
+
+        td {
+            border: solid;
+        }
+
+        tr {
+            border: solid;
+        }
+
+        .pais-tax1,
+        .pais-tax2 {
+            display: inline-block;
+            vertical-align: top;
+        }
+
+        .input-group-text .form-check-input[type="radio"] {
+            border-style: solid;
+            border-width: 2px;
+            border-color: black;
+        }
+
+        .form-check-input[type="radio"] {
+            border-style: solid;
+            border-width: 2px;
+            border-color: black;
+        }
+
+        .radio-container {
+            display: flex;
+            /* Enable flexbox */
+            justify-content: center;
+            /* Center the radio input within the label */
+            align-items: center;
+            /* Optionally, vertically center the radio if needed */
+
+        }
+    </style>
+    <br>
+    <br>
+    <div class="container mt-5">
+        <div class="col">
+            <div class="col-md-8 offset-md-2">
+                <h1 style="text-align: center;">Formulario Ficha de Cliente <br> Persona Jurídica</h1>
+                <hr id="infoEmpresa">
+                <form id="form">
+                    <div class="row mb-4">
+                        <div class="row mb-4">
+                            <h2>Identificación del Cliente (Empresa)</h2> <!-- 1 -->
+                            <br>
+                            <br>
+                            <div class="col-md-6"> <!-- Razón Social -->
+                                <label for="razon" class="form-label">Razón Social</label>
+                                <input type="text" name="razon" class="form-control" id="razon">
+                            </div>
+                            <div class=" col-md-6">
+                                <label for="rut" class="form-label">RUT</label>
+                                <input type="text" name="rut" class="form-control" id="rut">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomFantasia" class="form-label">Nombre de Fantasía</label>
+                                <input type="text" name="nomFantasia" class="form-control" id="nomFantasia">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="giro" class="form-label">Giro o Actividad</label>
+                                <input type="text" name="giro" class="form-control" id="giro">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="residencia" class="form-label">País de Residencia</label>
+                                <input type="text" name="residencia" "País de Residencia" class="form-control"
+                                    id="residencia">
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="direccion" class="form-label">Dirección</label>
+                                <input type="text" name="direccion" "Dirección" class="form-control" id="direccion">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="comuna" class="form-label">Comuna</label>
+                                <input type="text" name="comuna" "Comuna" class="form-control" id="comuna">
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="correo" class="form-label">Correo Electrónico</label>
+                                <input type="email" name="correo" "Correo Electrónico" class="form-control" id="correo">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="telefono1" class="form-label">Teléfono 1</label>
+                                <input type="tel" name="telefono1" "Teléfono 1" class="form-control" id="telefono1"
+                                    maxlength="20">
+
+                            </div>
+                            <div class="col-md-6">
+                                <label for="telefono2" class="form-label">Teléfono 2</label>
+                                <input type="tel" name="telefono2" "Teléfono 2" class="form-control" id="telefono2">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr id="accionistas">
+                        <h2>Accionistas</h2>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonAccio" class="form-label">Razón Social</label>
+                            <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomCompletoAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h4 style="text-decoration: underline;">Se entiende como Beneficiario Final : </h4>
+                        <br>
+                        <p id="texto9" class="texto-completo9">
+                            Se entenderá como Beneficiarios Finales a la(s) persona(s) natural(es) que
+                            finalmente
+                            posee, directa o indirectamente, a través
+                            de sociedades u otros mecanismos, una participación igual o mayor al 10% del capital o
+                            de los derechos a voto de una persona
+                            jurídica determinada. Asimismo, se entenderá como Beneficiario Final a la(s) persona(s)
+                            natural(es) que, sin perjuicio de poseer
+                            directa o indirectamente una participación inferior al 10% del capital o de los derechos
+                            a voto de una persona jurídica, a través
+                            de sociedades u otros mecanismos, ejerce el control efectivo de la persona o estructura
+                            jurídica.finalmente
+                            posee, directa o indirectamente, a través
+                            de sociedades u otros mecanismos, una participación igual o mayor al 10% del capital o
+                            de los derechos a voto de una persona
+                            jurídica determinada. Asimismo, se entenderá como Beneficiario Final a la(s) persona(s)
+                            natural(es) que, sin perjuicio de poseer
+                            directa o indirectamente una participación inferior al 10% del capital o de los derechos
+                            a voto de una persona jurídica, a través
+                            de sociedades u otros mecanismos, ejerce el control efectivo de la persona o estructura
+                            jurídica.
+
+                        </p>
+
+                        <br>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
+
+                        <div id="camposAccionista"></div>
+
+                        <br>
+                        <br>
+                        <hr>
+                        <h2 id="beneficiariosFinales">Beneficiarios Finales</h2>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionBenef" class="form-label">Dirección</label>
+                            <input type="text" name="direccionBenef" "Dirección" class="form-control"
+                                id="direccionBenef">
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="porcentajeBenef" class="form-label">Porcentaje de participación</label>
+                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef"
+                                >
+                        </div>
+                        <div class="mb-4"></div>
+
+                        <div id="camposBenefFinales"></div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Identificación del Gerente o Representante Legal</h2> <!-- 2 -->
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreGerente" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nombreGerente" "Nombre Completo" class="form-control"
+                                id="nombreGerente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutGerente" class="form-label">RUT</label>
+                            <input type="text" name="rutGerente" class="form-control" id="rutGerente">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadGerente" class="form-label">Nacionalidad</label>
+                            <input type="text" name="nacionalidadGerente" "Nacionalidad" class="form-control"
+                                id="nacionalidadGerente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoGerente" class="form-label">Correo Electrónico</label>
+                            <input type="email" name="correoGerente" "Correo Electrónico" class="form-control"
+                                id="correoGerente">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionGerente" class="form-label">Dirección</label>
+                            <input type="text" name="direccionGerente" "Dirección" class="form-control"
+                                id="direccionGerente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaGerente" class="form-label">Comuna</label>
+                            <input type="text" name="comunaGerente" "Comuna" class="form-control" id="comunaGerente">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilGerente" class="form-label">Estado Civil</label>
+                            <input type="text" name="estadoCivilGerente" "Estado Civil" class="form-control"
+                                id="estadoCivilGerente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Gerente" class="form-label">Teléfono 1</label>
+                            <input type="tel" name="telefono1Gerente" "Teléfono 1" class="form-control"
+                                id="telefono1Gerente">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Gerente" class="form-label">Telefóno 2</label>
+                            <input type="tel" name="telefono2Gerente" "Telefóno 2" class="form-control"
+                                id="telefono2Gerente">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+
+                        <div id="camposGerente"></div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Apoderados</h2> <!-- 3 -->
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreApoderado" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nombreApoderado" "Nombre Completo" class="form-control"
+                                id="nombreApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutApoderado" class="form-label">RUT</label>
+                            <input type="text" name="rutApoderado" class="form-control" id="rutApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadApoderado" class="form-label">Nacionalidad</label>
+                            <input type="text" name="nacionalidadApoderado" "Nacionalidad" class="form-control"
+                                id="nacionalidadApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoApoderado" class="form-label">Correo Electrónico</label>
+                            <input type="email" name="correoApoderado" "Correo Electrónico" class="form-control"
+                                id="correoApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionApoderado" class="form-label">Dirección</label>
+                            <input type="text" name="direccionApoderado" "Dirección" class="form-control"
+                                id="direccionApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaApoderado" class="form-label">Comuna</label>
+                            <input type="text" name="comunaApoderado" "Comuna" class="form-control"
+                                id="comunaApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilApoderado" class="form-label">Estado Civil</label>
+                            <input type="text" name="estadoCivilApoderado" "Estado Civil" class="form-control"
+                                id="estadoCivilApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Apoderado" class="form-label">Telefóno 1</label>
+                            <input type="tel" name="telefono1Apoderado" "Telefóno 1" class="form-control"
+                                id="telefono1Apoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Apoderado" class="form-label">Telefóno 2</label>
+                            <input type="tel" name="telefono2Apoderado" "Telefóno 2" class="form-control"
+                                id="telefono2Apoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                        <div id="camposApoderados">
+                            <!-- Los Apoderados se agregan en este div -->
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Otras personas autorizadas para dar órdenes a AAM S.A.</h2> <!-- 4 -->
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreAAM" class="form-label">Nombre Completo</label>
+                            <input type="text" name="nombreAAM" "Nombre Completo" class="form-control" id="nombreAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAAM" class="form-label">RUT</label>
+                            <input type="text" name="rutAAM" class="form-control" id="rutAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadAAM" class="form-label">Nacionalidad</label>
+                            <input type="text" name="nacionalidadAAM" "Nacionalidad" class="form-control"
+                                id="nacionalidadAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoAAM" class="form-label">Correo Electrónico</label>
+                            <input type="email" name="correoAAM" "Correo Electrónico" class="form-control"
+                                id="correoAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionAAM" class="form-label">Dirección</label>
+                            <input type="text" name="direccionAAM" "Dirección" class="form-control" id="direccionAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaAAM" class="form-label">Comuna</label>
+                            <input type="text" name="comunaAAM" "Comuna" class="form-control" id="comunaAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilAAM" class="form-label">Estado Civil</label>
+                            <input type="text" name="estadoCivilAAM" "Estado Civil" class="form-control"
+                                id="estadoCivilAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1AAM" class="form-label">Telefóno 1</label>
+                            <input type="tel" name="telefono1AAM" "Telefóno 1" class="form-control" id="telefono1AAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2AAM" class="form-label">Telefóno 2</label>
+                            <input type="tel" name="telefono2AAM" "Telefóno 2" class="form-control" id="telefono2AAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                        <br>
+                        <div id="camposAAM"> <!-- Aquí se agregan los campos AAM -->
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2 id="otraInfo">Medios para Instruir</h2>
+                        <br>
+                        <h4>Seleccione 1 opción</h4> <!-- 5 -->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionMedios" class="form-check-input" id="instrEscrita"
+                                        value="0">
+                                    <label for="instrEscrita" class="form-check-label">Verbal</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionMedios" class="form-check-input" id="mediosCorreo"
+                                        value="1">
+                                    <label for="mediosCorreo" class="form-check-label">Verbal y Escrita</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionMedios" class="form-check-input" id="mediosCorreo"
+                                        value="2">
+                                    <label for="mediosCorreo" class="form-check-label">Solo Escrita</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionMedios" class="form-check-input" id="mediosCorreo"
+                                        value="3">
+                                    <label for="mediosCorreo" class="form-check-label">Correo</label>
+                                    <br>
+                                    <br>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label for="inputMediosCorreo" class="form-label">Indicar Correo : </label>
+                                            <input type="email" class="form-control" id="inputMediosCorreo"
+                                                style="width: 300px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Naturaleza de la Relación con AAM S.A</h2>
+                        <br>
+                        <h4>Seleccione 1 opción</h4> <!-- 6 -->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionRelacionNatuAAM" class="form-check-input"
+                                        id="invertirNatuAAM" value="0">
+                                    <label for="invertirNatuAAM" class="form-check-label">Invertir</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionRelacionNatuAAM" class="form-check-input"
+                                        id="rescateNatuAAM" value="1">
+                                    <label for="rescateNatuAAM" class="form-check-label">Rescate</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionRelacionNatuAAM" class="form-check-input"
+                                        id="otroNatuAAM" value="2">
+                                    <label for="rescateNatuAAM" class="form-check-label">Otro (completar)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+
+                                <label for="inputNatuAAMotros" class="form-label">Otro : </label>
+                                <input type="text" class="form-control" id="inputNatuAAMotros">
+
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Relación Cliente con AAM S.A</h2>
+                        <br>
+                        <h4>Seleccione 1 opción</h4> <!-- 6 -->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionRelacionAAM" class="form-check-input"
+                                        id="opcionAccionista" value="0">
+                                    <label for="opcionAccionista" class="form-check-label">Accionista</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionRelacionAAM" class="form-check-input"
+                                        id="opcionDirector" value="1">
+                                    <label for="opcionDirector" class="form-check-label">Director</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionRelacionAAM" class="form-check-input"
+                                        id="opcionEmpleador" value="2">
+                                    <label for="opcionEmpleador" class="form-check-label">Trabajador</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionRelacionAAM" class="form-check-input"
+                                        id="opcionNoRelacionado" value="3">
+                                    <label for="opcionNoRelacionado" class="form-check-label">No Relacionado</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionRelacionAAM" class="form-check-input"
+                                        id="opcionOtro" value="4">
+                                    <label for="opcionOtro" class="form-check-label">Otro (completar)</label>
+                                </div>
+                            </div>
+                            <div class="col-md-6">
+                                <div>
+                                    <label for="inputRelacionAAM" class="form-label">Comentario Otro : </label>
+                                    <input type="text" class="form-control" id="inputRelacionAAM">
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Destino de Información al Cliente</h2>
+                        <br>
+                        <h4>Seleccione 1 opción</h4> <!-- 7 -->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionInfoCliente" class="form-check-input"
+                                        id="direcComercial" value="0">
+                                    <label for="direcComercial" class="form-check-label">Dirección Comercial</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionInfoCliente" class="form-check-input"
+                                        id="correoInfoCliente" value="1">
+                                    <label for="correoInfoCliente" class="form-check-label">Correo Electrónico</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionInfoCliente" class="form-check-input"
+                                        id="noEnviarInfoCliente" value="2">
+                                    <label for="noEnviarInfoCliente" class="form-check-label">No Enviar
+                                        Correspondencia</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionInfoCliente" class="form-check-input"
+                                        id="noEnviarInfoCliente" value="3">
+                                    <label for="noEnviarInfoCliente" class="form-check-label">Agregar otra
+                                        dirección</label>
+                                    <br>
+                                    <br>
+                                    <div class="col-md-6">
+                                        <div>
+                                            <label for="inputMediosCorreo" class="form-label">Indicar otra dirección :
+                                            </label>
+                                            <input type="email" class="form-control" id="inputDestinoInfoCliente"
+                                                style="width: 300px;">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Cuentas Corrientes</h2> <!-- 8 -->
+                        <br>
+                        <br>
+                        <br>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Moneda</th>
+                                    <th scope="col">Banco</th>
+                                    <th scope="col">Tipo de Cuenta</th>
+                                    <th scope="col">N° de Cuenta</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">CLP</th>
+                                    <td><input type="text" id="bancoCLP"></td>
+                                    <td><input type="text" id="tipoCuentaCLP"></td>
+                                    <td><input type="text" id="nCuentaCLP"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">USS</th>
+                                    <td><input type="text" id="bancoUSS"></td>
+                                    <td><input type="text" id="tipoCuentaUSS"></td>
+                                    <td><input type="text" id="nCuentaUSS"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <br>
+                        <br>
+
+                        <br>
+                        <div id="camposCtasCorrientes"> <!-- Aquí se agrega la cuenta corriente-->
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>DECLARACIÓN DE ORIGEN DE FONDOS : </h2> <!-- 16 -->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <p id="texto4" class="texto-completo4">
+                                1-Todo abono efectuado a AAM S.A. Administradora de Activos será mediante
+                                transferencia electrónica o deposito con cheque de bancos según
+                                lo establecido en las políticas de aceptación de fondos, esto con el fin de
+                                no aceptar dineros en efectivo que provengan de actividades ilícitas.
+                                <br>
+                                <br>
+                                2-Los activos o dineros que han sido o serán abonados o depositados a
+                                cualquier cuenta no provienen, directa ni indirectamente, de actividades
+                                ilícitas, y dicho abono o depósito no constituye uno de los delitos
+                                contemplados en el artículo 27 de la Ley 19.913, o la que la sustituya o
+                                reemplace.
+                                <br>
+                                <br>
+                                3-Los fondos no han sido y no serán abonados o depositados, directa o
+                                indirectamente, por o a través de las siguientes personas (las “personas
+                                prohibidas”),jurisdicciones y/o países:
+                                <br>
+                                a. Terroristas u organizaciones terroristas, incluyendo aquellas personas o
+                                entidades indicadas en la lista en idioma inglés denominada “List
+                                of Specially Designated Nationals and Bloqued Persons” emitida por la OFAC
+                                del Departamento del Tesoro del Gobierno de los Estados
+                                Unidos (“Treasury Department Office Of Foreign Assets Control”).
+                                <br>
+                                b. Banco Pantalla. (Banco sin presencia física.)
+                                <br>
+                                c. Persona natural listada en alguna resolución del Consejo de Seguridad de
+                                las Naciones Unidas.
+                                <br>
+                                d. Países o jurisdicciones que se encuentran bajo proceso de seguimiento del
+                                Grupo de Acción Financiera Internacional (GAFI).
+                                <br>
+                                <br>
+                                4-Declaro que, hasta esta fecha, no he sido condenado (a), ni me encuentro
+                                en algún proceso judicial por delitos relativos al Lavado de Activos,
+                                Financiamiento del Terrorismo, Delitos de Cohecho, Negociación incompatible,
+                                corrupción entre privados, Apropiación indebida y Administración
+                                Desleal. Además, declaro mi compromiso de mantener tal condición durante
+                                toda la vigencia de la relación comercial con AAM S.A. Administradora
+                                de Activos, obligándonos a no incurrir o desarrollar, en caso alguno, ningún
+                                tipo de actividad o conducta asociada a dichos delitos.
+
+                            </p>
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Nivel de Renta</h2>
+                        <br>
+                        <h4>Seleccione 1 opción</h4>
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="form-check">
+                                    <input type="radio" name="opcionNivelRenta" class="form-check-input"
+                                        id="ceroUnoRenta" value="0">
+                                    <label for="ceroUnoRenta" class="form-check-label">$0 a $20.000.000</label>
+                                </div>
+                                <br>
+                                <div class="form-check">
+                                    <input type="radio" name="opcionNivelRenta" class="form-check-input"
+                                        id="unoCincoRenta" value="1">
+                                    <label for="unoCincoRenta" class="form-check-label">$20.000.001 a
+                                        $50.000.000</label>
+                                </div>
+                                <br>
+                                <div class="form-check">
+                                    <input type="radio" name="opcionNivelRenta" class="form-check-input"
+                                        id="cincoMasRenta" value="2">
+                                    <label for="cincoMasRenta" class="form-check-label">$50.000.001 a
+                                        $100.000.000</label>
+                                </div>
+                                <br>
+                                <div class="form-check">
+                                    <input type="radio" name="opcionNivelRenta" class="form-check-input"
+                                        id="cincoMasRenta" value="3">
+                                    <label for="cincoMasRenta" class="form-check-label">$100.000.001 o más</label>
+                                </div>
+                                <br>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div>
+                                <label for="inputFuenteRenta" class="form-label">Fuente de Ingresos : </label>
+                                <input type="text" class="form-control" id="inputFuenteRenta">
+                            </div>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Patrimonio</h2>
+                        <br>
+                        <h4>Seleccione 1 opción</h4> <!-- 10 -->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <div class="col-md-6">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionPatrimonio" class="form-check-input"
+                                        id="ceroDiezPatrimonio" value="0">
+                                    <label for="ceroDiezPatrimonio" class="form-check-label">$0 a $50.000.000</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionPatrimonio" class="form-check-input"
+                                        id="diezCincuentaPatri" value="1">
+                                    <label for="diezCincuentaPatri" class="form-check-label">$50.000.001 a
+                                        $500.000.000</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionPatrimonio" class="form-check-input"
+                                        id="cincuentaMasPatri" value="2">
+                                    <label for="cincuentaMasPatri" class="form-check-label">$500.000.001 a $1.000
+                                        Millones</label>
+                                </div>
+                                <br>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionPatrimonio" class="form-check-input"
+                                        id="cincuentaMasPatri" value="3">
+                                    <label for="cincuentaMasPatri" class="form-check-label">$1.001 Millones o
+                                        más</label>
+                                </div>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Actividades del Cliente</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="mb-2">
+                            <select class="form-select" name="actClientes" id="opcionActCliente">
+                                <option value="" disabled>Seleccione 1 opción</option>
+                                <option value="0">Casino-Juego</option>
+                                <option value="1">Notaría</option>
+                                <option value="2">Agencia de viajes </option>
+                                <option value="3">Inv. Turísticas </option>
+                                <option value="4">Construcción </option>
+                                <option value="5">Inv. De Empresas </option>
+                                <option value="6">Automotoras </option>
+                                <option value="7">Casas de Cambio </option>
+                                <option value="8">Conservador de Bienes Raíces </option>
+                                <option value="9">Agentes de Aduana </option>
+                                <option value="10">Act. Sin Fines de Lucro </option>
+                                <option value="11">Otros (completar) </option>
+                            </select>
+                            <br>
+                            <div class="col-md-6">
+                                <div>
+                                    <label for="inputActCliente" class="form-label">Otros : </label>
+                                    <input type="text" class="form-control" id="inputActCliente">
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <br>
+                        <hr>
+                        <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <p id="texto" class="texto-completo">
+                                Se define como Personas Expuestas Políticamente (PEP) a los chilenos o extranjeros
+                                que desempeñan o hayan desempeñado funciones públicas destacadas en un país, hasta a lo
+                                menos un año de finalizado el ejercicio
+                                de esta. Se incluyen a sus cónyuges, sus parientes hasta el segundo grado de
+                                consanguinidad, y las personas naturales con las que hayan
+                                celebrado un pacto de actuación conjunta, mediante el cual tengan poder de voto
+                                suficiente para influir en sociedades constituidas en Chile.
+
+                            </p>
+
+                            <br>
+                            <hr>
+                            <h2>Se entiende como Sociedades o Entidades Expuestas Políticamente (PEP):</h2>
+                            <p id="texto2" class="texto-completo2">
+                                <span class="texto-adicional2">
+                                    - Las que hayan sido creadas por personas que ostentan la calidad de PEP, y que
+                                    tengan una participación mínima de un 10% de la propiedad.
+
+                                    <br>
+                                    - A su vez, la (s) persona(s) natural(es) que, sin perjuicio de poseer directa o
+                                    indirectamente una participación inferior al 10% del capital o de los derechos a
+                                    voto de una persona o estructura jurídicas, a través de sociedades u otro
+                                    mecanismo, ejerce el control efectivo en la toma de decisiones de la persona o
+                                    estructura jurídicas.
+
+                                    <br>
+                                    - También sus directores, representantes legales y controladores de la empresa
+                                    que trabajan o han trabajado en algunas de las funciones públicas.
+                                </span>
+                            </p>
+
+                            <br>
+                            <hr>
+                            <h2>Funciones y Personas que son consideradas como PEP:</h2>
+                            <p id="texto3" class="texto-completo3">
+                                <span class="texto-adicional3">
+                                    Funciones públicas: Comprenden en esta categoría a jefes de Estado o de un
+                                    Gobierno, políticos de alta jerarquía, funcionarios gubernamentales, judiciales
+                                    o militares de alta jerarquía y altos ejecutivos de empresas estatales.
+                                    <br>
+                                    Se califican PEP a las siguientes personas:
+                                    <br>
+                                    -Presidente de la República, Senadores, Diputados y Alcaldes.
+                                    <br>
+                                    -Ministros de la Corte Suprema y Cortes de Apelaciones.
+                                    <br>
+                                    -Ministros de Estado, Subsecretarios, Intendentes, Gobernadores, Secretarios
+                                    Regionales Ministeriales, Embajadores, Jefes Superiores de Servicio,
+                                    tanto centralizados como descentralizados y el directivo superior
+                                    inmediato que deba subrogar a cada uno de ellos.
+                                    <br>
+                                    -Comandantes en Jefe de las Fuerzas Armadas, Director General
+                                    Carabineros, Director General de Investigaciones, y el oficial superior
+                                    inmediato que deba subrogar a cada uno de ellos.
+                                    <br>
+                                    -Fiscal Nacional del Ministerio Público y Fiscales Regionales.
+                                    <br>
+                                    -Contralor General de la República Consejeros del Banco Central de Chile.
+                                    <br>
+                                    -Consejeros del Consejo de Defensa del Estado.
+                                    <br>
+                                    -Ministros del Tribunal Constitucional.
+                                    <br>
+                                    -Ministros del Tribunal de la Libre Competencia.
+                                    <br>
+                                    -Integrantes titulares y suplentes del Tribunal de Contratación Pública.
+                                    <br>
+                                    -Consejeros del Consejo de Alta Dirección Pública.
+                                    <br>
+                                    -Los directores y ejecutivos principales de empresas públicas,
+                                    según lo definido por la Ley Nº 18.045.
+                                    <br>
+                                    -Directores de sociedades anónimas nombrados por el Estado o sus organismos.
+                                    <br>
+                                    -Miembros de las directivas de los partidos políticos.
+                                </span>
+                            </p>
+
+                        </div>
+                        <br>
+                        <hr>
+                        <h2>¿Es usted cliente PEP?</h2> <!--14-->
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="opcionClientePEP" class="form-check-input mt-2"
+                                    id="clientePEPsi" value="0">
+                                <label style="font-weight:bolder; text-decoration: underline; font-size: larger;"
+                                    for="clientePEPsi" class="form-check-label">Si</label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input type="radio" name="opcionClientePEP" class="form-check-input mt-2"
+                                    id="clientePEPno" value="1">
+                                <label style="font-weight:bolder; text-decoration: underline; font-size: larger;"
+                                    for="clientePEPno" class="form-check-label">No</label>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Identificar Clientes PEP</h2> <!--15-->
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row-md-9">
+                            <button type="button" class="btn btn-outline-primary mb-4"
+                                id="mostrarDatosAccionistas">Recuperar Datos de Accionistas</button>
+                            <button type="button" class="btn btn-outline-primary mb-4"
+                                id="mostrarDatosBeneficiarios">Recuperar Datos de Beneficiarios</button>
+                            <div class="row-md-6" id="recuperarDatosPEP">
+                                <br>
+                                <h5 style="font-weight: bold;">Accionistas : </h5>
+                                <br>
+                                <div id="datosAccionistasRecuperados">
+                                    <!-- Contenido del div aquí -->
+                                    <br>
+                                </div>
+                                <br>
+                                <h5 style="font-weight: bold;">Beneficiarios Finales : </h5>
+                                <br>
+                                <div id="datosBeneficiariosRecuperados">
+                                    <!-- Contenido del div aquí -->
+                                    <br>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>MANTENCIÓN DE REGISTROS : </h2> <!-- 17 -->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <p id="texto5" class="texto-completo5">
+                                AAM S.A. Administradora de Activos como sujeto obligado y con el fin de mantener los
+                                registros en conformidad a lo establecido en el
+                                artículo 5° de la Ley N° 19.913, mantendrá el registro de la información
+                                en formato digital, proporcionando una copia al cliente en caso de
+                                que este lo requiera y exprese mediante el correo electrónico descrito
+                                en los antecedentes personales.
+
+                            </p>
+
+                        </div>
+                        <br>
+                        <br>
+                        <hr>
+                        <h2>Definición de Inversionista Calificado : </h2>
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <p id="texto6" class="texto-completo6">
+                                Serán considerados Inversionistas Calificados y, por ende, podrán participar en los
+                                mercados especiales establecidos por este Servicio y en las ofertas o colocaciones
+                                dirigidas a estos
+                                inversionistas, las siguientes personas y entidades:
+                                <br>
+                                1. Inversionistas institucionales, entendiendo por tales aquéllos contenidos en la
+                                letra e. del
+                                artículo 4 bis de la Ley Nº 18.045.
+                                <br>
+                                2. Bancos, sociedades financieras, compañías de seguros, entidades de reaseguro,
+                                intermediarios
+                                de valores y administradoras de fondos, constituidos en el extranjero.
+                                <br>
+                                3. Corredores de bolsa y agentes de valores, cuando actúen por cuenta propia.
+                                <br>
+                                4. Corredores de bolsas de productos agropecuarios, cuando actúen por cuenta propia
+                                y la
+                                inversión corresponda a productos de aquellos señalados en el artículo 5° de la Ley
+                                19.220.
+                                <br>
+                                5. Personas naturales o jurídicas y entidades, chilenas o extranjeras, que cuenten
+                                con inversiones
+                                financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el
+                                extranjero,
+                                por un monto no inferior a 20.000 UF.
+                                <br>
+                                6. Personas naturales o jurídicas y entidades, chilenas o extranjeras, que cuenten
+                                con inversiones
+                                financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el
+                                extranjero,
+                                por un monto superior a 4.000 UF y que además cumplan con alguno de los siguientes
+                                requisitos:
+                                <br>
+                                a.- Contar con un patrimonio contable igual o superior a 100.000 UF;
+                                <br>
+                                b.- Haber realizado transacciones en el mercado de valores por un monto individual
+                                superior a
+                                U.F. 1.000 y con una frecuencia mínima de 20 operaciones trimestrales, durante los
+                                últimos
+                                4 trimestres.
+                                <br>
+                                c.- Ser un profesional universitario con especialización en economía, administración
+                                o finanzas
+                                o haber obtenido un post-grado universitario en tales áreas.
+                                <br>
+                                d.- Haber desempeñado, por a lo menos por dos años consecutivos, un cargo
+                                profesional en
+                                mesas de dinero o en departamentos dedicados a realizar análisis financiero,
+                                asesorías
+                                financieras, administración y gestión de recursos, vinculados a las decisiones de
+                                inversión
+                                en un Inversionista Calificado.
+                                <br>
+                                e.- Que las decisiones de inversión sean adoptadas por un Inversionista Calificado
+                                de acuerdo
+                                a las consideraciones de esta Norma, en virtud de un contrato de administración de
+                                cartera.
+                                Esto, en la medida que la facultad para participar en los mercados especiales,
+                                ofertas y
+                                colocaciones a que se refiere esta Norma haya quedado expresamente señalada en el
+                                contrato de administración respectivo y que el Inversionista Calificado informe
+                                mensualmente al cliente de las operaciones realizadas en virtud de dicha facultad.
+                                <br>
+                                f.- Ser una persona jurídica o entidad, nacional o extranjera, en que las decisiones
+                                de
+                                inversión sean adoptadas por un Inversionista Calificado de acuerdo a las
+                                consideraciones
+                                de esta Norma.
+
+
+
+                                </span>
+                            </p>
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Actividades : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row-md-9">
+                            <div class="input-group md-6">
+                                <textarea name="AreaPregunta1" id="AreaPregunta1" cols="50" rows="4" readonly>¿Cuenta con inversiones financieras en valores susceptibles de ser ofrecidos públicamente en Chile o en el extranjero, por un monto igual o superior a 2.000 Unidades de Fomento?
+                                    </textarea>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label for="pregunta1Si" style="padding-right: 5px;">Si</label>
+                                        <input name="AreaPregunta1" id="pregunta1Si" class="form-check-input"
+                                            type="radio" value="0">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label for="pregunta1No" style="padding-right: 5px;">No</label>
+                                        <input name="AreaPregunta1" id="pregunta1No" class="form-check-input"
+                                            type="radio" value="1">
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group md-6">
+                                    <textarea name="AreaPregunta2" id="AreaPregunta2" cols="50" rows="2" readonly>¿Cuenta con activos iguales o superiores a 100.000 Unidades de Fomento?
+                                        </textarea>
+
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label for="pregunta2Si" style="padding-right: 5px;">Si</label>
+                                            <input name="AreaPregunta2" id="pregunta2Si" class="form-check-input"
+                                                type="radio" value="2">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label for="pregunta2No" style="padding-right: 5px;">No</label>
+                                            <input name="AreaPregunta2" id="pregunta2No" class="form-check-input"
+                                                type="radio" value="3">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group md-6">
+                                    <textarea name="AreaPregunta3" id="AreaPregunta3" cols="50" rows="6" readonly>¿Ha realizado transacciones en el mercado de valores por un monto individual igual o superior a 1.000 Unidades de Fomento y con una frecuencia mínima de 20 operaciones trimestrales, durante los últimos 4 trimestres?
+                                        </textarea>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label for="pregunta3Si" style="padding-right: 5px;">Si</label>
+                                            <input name="AreaPregunta3" id="pregunta3Si" class="form-check-input"
+                                                type="radio" value="4">
+                                        </div>
+                                    </div>
+
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label for="pregunta3No" style="padding-right: 5px;">No</label>
+                                            <input name="AreaPregunta3" id="pregunta3No" class="form-check-input"
+                                                type="radio" value="5">
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>DECLARACIÓN INVERSIONISTA CALIFICADO : </h2> <!-- 18 -->
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row-md-9 align-items-center">
+                            <div class="input-group md-6">
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label style="padding-right: 5px;">Declaro ser</label>
+                                        <input name="declaroInversionista" class="form-check-input" type="radio"
+                                            value="0" id="declaroInversionSer" disabled>
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label style="padding-right: 5px;">No ser</label>
+                                        <input name="declaroInversionista" class="form-check-input" type="radio"
+                                            value="1" id="declaroInversionNoSer" disabled>
+                                    </div>
+                                </div>
+                                <input type="text" readonly class="form-control" value="Inversionista Calificado"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>DECLARACIÓN CRS PERSONA JURÍDICA : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row-md-6">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th scope="row">Razón Social</th>
+                                        <td><input type="text" id="razonCRS" style="width: 380px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">RUT</th>
+                                        <td><input type="text" id="rutCRS" style="width: 380px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Fecha de Constitución</th>
+                                        <td><input type="date" id="fechaConstCRS" style="width: 380px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Nacionalidad, Lugar de Constitución </th>
+                                        <td><input type="text" id="nacionalidadCRS" style="width: 380px;"></td>
+
+                                    </tr>
+                                    <tr>
+                                        <th scope="row">Fecha de Declaración </th>
+                                        <td>
+                                            <span id="fechaCRS" class="form-control"
+                                                style="font-weight: bold; font-size: large;"></span>
+
+                                            <script> // Obtener la fecha actual
+                                                const fechaCRSSpan = document.getElementById("fechaCRS");
+                                                const dateCRS = new Date();
+                                                const formattedDateCRS = dateCRS.toLocaleDateString("es-CL");
+                                                fechaCRSSpan.textContent = formattedDateCRS;
+                                            </script>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row-md-9">
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Tiene Residencia Fiscal en el extranjero?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label style="padding-right: 10px;">Si</label>
+                                        <input name="residenciaFiscalPregunta" class="form-check-input" type="radio"
+                                            value="0" id="residenciaFiscalSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label style="padding-right: 10px;">No</label>
+                                        <input name="residenciaFiscalPregunta" class="form-check-input" type="radio"
+                                            value="1" id="residenciaFiscalNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                        </div>
+
+                        <div id="respuestaSi" style="display: none;">
+                            <h4>Si responde "Si", favor responda lo siguiente:</h4>
+                            <div class="row">
+                                <div class="col-md-6 pais-tax1">
+                                    <div class="col-md-12">
+                                        <label for="paisFiscal" class="form-label">País de domicilio tributario</label>
+                                        <input type="text" name="paisFiscal" "País" class="form-control"
+                                            id="paisFiscal">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="taxID" class="form-label">Tax ID de domicilio tributario</label>
+                                        <input type="text" name="taxID" "Tax ID" class="form-control" id="taxID">
+                                    </div>
+                                </div>
+                                <div class="col-md-6 pais-tax2">
+                                    <div class="col-md-12">
+                                        <label for="paisFiscal2" class="form-label">País (2) de domicilio
+                                            tributario</label>
+                                        <input type="text" name="paisFiscal2" "País (2)" class="form-control"
+                                            id="paisFiscal2">
+                                    </div>
+                                    <div class="col-md-12">
+                                        <label for="taxID2" class="form-label">Tax ID (2) de domicilio
+                                            tributario</label>
+                                        <input type="text" name="taxID2" "Tax ID (2)" class="form-control" id="taxID2">
+                                    </div>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="A- ¿La sociedad es una institución financiera?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">Si</label>
+                                    <input name="preguntaA" class="form-check-input mt-1" type="radio" value="0"
+                                        id="preguntaASi">
+                                </div>
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">No</label>
+                                    <input name="preguntaA" class="form-check-input mt-1" type="radio" value="1"
+                                        id="preguntaANo">
+                                </div>
+                            </div>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="B- ¿Es la sociedad una institución Financiera exenta?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">Si</label>
+                                    <input name="preguntaB" class="form-check-input mt-1" type="radio" value="0"
+                                        id="preguntaBSi">
+                                </div>
+                                <div class="input-group-text">
+                                    <label style="padding-right: 10px;">No</label>
+                                    <input name="preguntaB" class="form-check-input mt-1" type="radio" value="1"
+                                        id="preguntaBNo">
+                                </div>
+                            </div>
+                            <div class="col-md-6" id="DivpqPreguntaB" style="display: none;">
+                                <div class="input-group">
+                                    <label class="input-group-text">Indique el porqué está exenta:</label>
+                                    <input type="text" id="pqPreguntaB" class="form-control">
+                                </div>
+                            </div>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="C- A continuación, debe completar la información de los accionistas y/o beneficiarios finales."
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            </div>
+                            <hr>
+                            <h2>Identificar Residencia Fiscal</h2> <!--15-->
+                            <br>
+                            <div class="row-md-9">
+                                <button type="button" class="btn btn-outline-primary mb-4"
+                                    id="mostrarResidenciaAccio">Recuperar Datos de Accionistas</button>
+                                <button type="button" class="btn btn-outline-primary mb-4"
+                                    id="mostrarResidenciaBeneficiarios">Recuperar Datos de Beneficiarios</button>
+                            </div>
+                            <div class="row-md-6" id="datosResidencia">
+                                <br>
+                                <h5 style="font-weight: bold;">Accionistas : </h5>
+                                <br>
+                                <div id="datosResidenciaAccioRecuperados">
+                                    <!-- Contenido del div aquí -->
+                                    <br>
+                                </div>
+                                <br>
+                                <h5 style="font-weight: bold;">Beneficiarios Finales : </h5>
+                                <div id="datosResidenciaBenefRecuperados">
+                                    <!-- Contenido del div aquí -->
+                                    <br>
+                                </div>
+                            </div>
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Declaraciones del Cliente : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <p id="texto7" class="texto-completo7">
+                                1.1. Haber sido informado por la administradora respecto de las normas CRS
+                                (Common Reporting Standard), norma internacional sobre intercambio
+                                de información automática de cuentas financieras, cuyo objeto es combatir la
+                                evasión fiscal internacional, a través de la cooperación entre las
+                                administraciones tributarias de los distintos Estados participantes de la misma.
+                                Con fecha 01 de junio de 2011, Chile suscribió CRS, obligándose a
+                                efectuar el primer intercambio de información a partir del 01 de julio de 2017.
+                                En este contexto, bajo CRS y otras normas complementarias dictadas
+                                respecto de ella, AAM S.A. Administradora de Activos (en adelante La
+                                Administradora) se encuentra obligada a realizar, entre otras, las siguientes
+                                actuaciones: (i) identificar dentro de su cartera de clientes a aquellos que
+                                sean residentes fiscales de un país extranjero; (ii) proporcionar a la
+                                autoridad tributaria del país correspondiente, directamente o a través de otras
+                                autoridades chilenas o extranjeras, información de identificación
+                                personal sobre los contribuyentes que mantengan residencia fiscal en cualquier
+                                país extranjero, así como sobre las cuentas corrientes bancarias y
+                                demás cuentas financieras, u otros activos de que éstos sean titulares, o de las
+                                operaciones bancarias o financieras que ejecuten, incluyéndose en
+                                dicha información toda aquella sometida a secreto o reserva bancaria bajo la
+                                legislación chilena.
+                                <br>
+                                <br>
+                                1.2. En consideración a lo expuesto, por este acto el Cliente, representado se
+                                obliga a entregar a la administradora la siguiente información: (i)
+                                aquella que la administradora le solicite con el objeto de dar cumplimiento a
+                                las normas CRS, o a la normativa que cualquier otro país haya
+                                implementado para evitar la evasión tributaria de sus contribuyentes en el
+                                extranjero; y (ii) toda la información que la administradora le solicite
+                                con el objeto de cumplir un requerimiento de entrega de información efectuado
+                                por la autoridad tributaria local o extranjera bajo CRS o respecto
+                                de cualquier normativa extranjera que tenga por objeto evitar la evasión
+                                tributaria de sus contribuyentes.
+                                <br>
+                                <br>
+                                1.3. En virtud de lo expuesto, el cliente autoriza expresamente a la
+                                administradora para entregar al Servicio de Impuestos Internos de Chile o a las
+                                autoridades tributarias extranjeras correspondientes, ya sea directamente o a
+                                través de otras autoridades locales o extranjeras, según corresponda
+                                bajo CRS o bajo cualquier otra norma extranjera que tenga por objeto evitar la
+                                evasión tributaria de sus contribuyentes, la siguiente información:
+                                (i) información personal, incluyendo, pero no limitada a, su nombre,
+                                nacionalidad, dirección, número de identificación tributario; (ii) el número
+                                de sus cuentas corrientes bancarias u otras cuentas financieras que mantenga en
+                                la administradora, así como sus respectivos movimientos y
+                                saldos, incluyéndose toda aquella información sometida a secreto o sujeta a
+                                reserva bancaria bajo la legislación chilena; y (iii) toda otra
+                                información requerida por la autoridad tributaria extranjera correspondiente,
+                                directamente o a través de las autoridades locales o extranjeras
+                                que correspondan bajo CRS y respecto de cualquier normativa extranjera que tenga
+                                por objeto evitar la evasión tributaria de sus contribuyentes
+                                en el extranjero, ya sean éstas de carácter personal, relativa a los activos de
+                                su propiedad, a sus operaciones bancarias o financieras o de
+                                cualquier otra naturaleza, comprendiéndose en dicha información incluso toda
+                                aquella sometida a secreto o reserva bancaria bajo la legislación
+                                chilena.
+                                <br>
+                                <br>
+                                1.4. Conjuntamente con lo anterior, se obliga a informar a la administradora
+                                respecto de cualquier cambio de estado o circunstancias que tenga
+                                lugar en el futuro, en virtud del cual pase a tener residencia fiscal en un país
+                                extranjero, dentro del plazo de 5 días hábiles contados de la fecha
+                                en que tenga lugar el referido cambio.
+                                <br>
+                                <br>
+                                1.5. Que, a su leal saber y entender, toda la información y todos los datos
+                                proporcionados a la administradora contenidos en la presente
+                                declaración son precisos, correctos y completos.
+                                <br>
+                                <br>
+                                El Decreto Nº 418 de fecha 3 de abril de 2017 del Ministerio de Hacienda de la
+                                República de Chile que contiene la normativa CRS (Common Reporting
+                                Standard) obliga, a partir del 1º de Julio del año 2017, a todas y cada una de
+                                las entidades financieras chilenas a requerir a sus clientes ciertas
+                                informaciones, con el objetivo de determinar si son personas con residencia
+                                tributaria en el extranjero, todo ello al alero de la Convención sobre
+                                Asistencia Administrativa Mutua en Materia Tributaria que suscribieron distintos
+                                estados, entre éstos, Chile.
+                                <br>
+                                <br>
+                                Se considera que son residentes fiscales de países o jurisdicciones
+                                participantes, entre otros:
+                                <br>
+                                -Los residentes fiscales de países que firmaron el Convenio;
+                                <br>
+                                -Las personas o entidades que son consideradas residente para efectos
+                                tributarios de otra jurisdicción, de acuerdo a la ley aplicable en
+                                dicha jurisdicción;
+                                <br>
+                                -Las entidades (personas jurídicas), en que más del 50% de sus ingresos
+                                provengan de inversiones y actividades financieras y que tengan
+                                al menos un accionista o beneficiario real, considerado contribuyente de una
+                                jurisdicción participante, con participación accionaria mayor
+                                o igual al 20% en dicha entidad; y,
+                                <br>
+                                -Entidades o instituciones financieras que están constituidas en un país o
+                                jurisdicción no participante, pero que uno de los socios es
+                                residente fiscal de un país o jurisdicción participante.
+
+                            </p>
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Declaración del Carácter de US ENTITY - FATCA : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row mb-4">
+                            <p id="texto8" class="texto-completo8">
+                                La legislación norteamericana FATCA (Foreign Account Tax Compliance Act) obliga,
+                                a
+                                partir del 1º de Julio del año 2014, a todos y cada una de las
+                                entidades financieras chilenas a requerir a sus clientes ciertas informaciones,
+                                con
+                                el objetivo de determinar si son o no contribuyentes en Estados
+                                Unidos de América (US ENTITY).
+                                <br>
+                                <br>
+                                Se entiende por US ENTITY :
+                                <br>
+                                a-Toda aquella entidad que tiene residencia tributaria en Estados Unidos.
+                                <br>
+                                b-Es controlada en más de un 10%, directa o indirectamente, por personas o
+                                entidades
+                                Estados Unidenses , afectas al impuesto en ese país.
+
+                            </p>
+
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2>Sección 1 : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row-md-4">
+                            <h4>1- La Sociedad es una Entidad No Financiera que obtiene rentas de fuente pasiva
+                                (passive
+                                NFFE ante la Ley FATCA)</h4>
+                            <br>
+                            <label style="padding-right: 17px;">Si</label>
+                            <input name="preguntaSeccion1" class="form-check-input mt-1" type="radio" value="0"
+                                id="preguntaSeccion1Si">
+                        </div>
+                        <div class="col-md-6">
+                            <label style="padding-right: 10px;">No</label>
+                            <input name="preguntaSeccion1" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaSeccion1No">
+                        </div>
+                        <br>
+                        <br>
+                        <div id="respuestaFATCASi" style="display: none;">
+                            <h4 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI,
+                                responda
+                                las siguientes preguntas:</h4>
+                            <br>
+                            <div class="row-md-6">
+                                <h5>A. La Sociedad Cliente fue constituida en los Estados unidos de América</h5>
+                                <label style="padding-right: 17px;">Si</label>
+                                <input name="preguntaSeccion1ABC" class="form-check-input mt-1" type="radio" value="0"
+                                    id="preguntaSeccion1ASi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="preguntaSeccion1ABC" class="form-check-input mt-1" type="radio" value="1"
+                                    id="preguntaSeccion1ANo">
+                            </div>
+                            <br>
+                            <div class="row-md-6">
+                                <h5>B. La Sociedad Cliente tiene algún socio, beneficiario final o accionista
+                                    persona
+                                    natural directo o indirecto que individual o conjuntamente
+                                    posean el 10% o más de la propiedad o control de la Sociedad</h5>
+                                <label style="padding-right: 17px;">Si</label>
+                                <input name="preguntaSeccion1B" class="form-check-input mt-1" type="radio" value="0"
+                                    id="preguntaSeccion1BSi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="preguntaSeccion1B" class="form-check-input mt-1" type="radio" value="1"
+                                    id="preguntaSeccion1BNo">
+                            </div>
+                            <br>
+                            <div class="row-md-6">
+                                <h5>C. La Sociedad Cliente tiene residencia tributaria en los Estados Unidos de
+                                    América.
+                                </h5>
+                                <label style="padding-right: 17px;">Si</label>
+                                <input name="preguntaSeccion1C" class="form-check-input mt-1" type="radio" value="0"
+                                    id="preguntaSeccion1CSi">
+                            </div>
+                            <div class="col-md-6">
+                                <label style="padding-right: 10px;">No</label>
+                                <input name="preguntaSeccion1C" class="form-check-input mt-1" type="radio" value="1"
+                                    id="preguntaSeccion1CNo">
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control" value="¿Es la sociedad cliente US ENTITY?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <input name="sociedadClienteUSPregunta" class="form-check-input" type="radio"
+                                        value="0" id="sociedadClienteUSSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <input name="sociedadClienteUSPregunta" class="form-check-input" type="radio"
+                                        value="1" id="sociedadClienteUSNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div id="respuestaSociedadClienteUSSi" style="display: none;">
+                            <br>
+                            <h5 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI, ,
+                                Usted
+                                puede
+                                ingresar su número de identificación tributaria estadounidense (TIN) : </h5>
+                            <br>
+                            <div class="input-group md-6">
+                                <span class="input-group-text">Número de Identificación Tributaria estadounidense
+                                    (TIN)</span>
+                                <input type="text" id="tin" class="form-control">
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <hr>
+                        <br>
+                        <h2>Validar la Información : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div>
+                            <p>
+                                <span>
+                                    Declaro que las informaciones proporcionadas en este formulario son verdaderas,
+                                    válidas,
+                                    correctas y completas. Asimismo, declara estar en
+                                    conocimiento de que deben mantener actualizados estos antecedentes e informar de
+                                    ello a
+                                    AAM S.A. Administradora de Activos, incluida la
+                                    información proporcionada en este formulario, datos o circunstancias antes
+                                    indicadas, o
+                                    bien, la inclusión de nueva información, que cumpla con
+                                    las mismas condiciones. En caso de existir un cambio, en sus antecedentes o en las
+                                    declaraciones efectuadas en el presente formulario, daréaviso
+                                    a la administradora, dentro de los 30 días corridos siguientes a la modificación.
+                                    Asimismo, autorizo a que me sea requerida y me obligo desde ya
+                                    a enviar oportunamente toda documentación adicional que fuere necesario para
+                                    complementar este formulario y así dar cumplimiento a la
+                                    normativa FATCA.”
+                                </span>
+                            </p>
+                            <br>
+                            <div class="input-group text-center">
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                        <input name="" class="form-check-input" type="radio" id="" disabled>
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                        <input name="" class="form-check-input" type="radio" id="">
+                                    </div>
+                                </div>
+                                <input type="text" readonly class="form-control"
+                                    value="He leído y confirmo la veracidad de toda la información ingresada"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            </div>
+                            <br>
+                            <br>
+                        </div>
+                        <hr>
+                        <br>
+                        <h2>Información Adicional (uso exclusivo de <br> AAM S.A. administradora de activos)</h2>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <h3>Identificación del cliente : </h3>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonPerfil" class="form-label">Razón Social</label>
+                            <input type="text" name="razon" class="form-control" id="razonPerfil">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutPerfil" class="form-label">RUT</label>
+                            <input type="text" name="rut" class="form-control" id="rutPerfil">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="clienteConocidoPregunta" class="form-label">Cliente conocido por AAM S.A. o
+                                referenciado por otro cliente:</label>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
+                                    id="clienteConocidoSi" value="0">
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
+                                    id="clienteConocidoNo" value="1">
+                            </div>
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="referenciaPerfil" class="form-label">Referencia</label>
+                            <input type="text" name="referenciaPerfil" "Referencia" class="form-control"
+                                id="referenciaPerfil">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <hr>
+                        <br>
+                        <h2 id="perfilRiesgo" style="text-align: center;">Perfil (riesgo) del Cliente</h2>
+                        <br>
+                        <br>
+                        <h4 style="text-decoration: underline;">Significado de cada categoría de Riesgo de Cliente :
+                        </h4>
+                        <br>
+                        <p id="texto10" class="texto-completo10">
+                            -Cliente Riesgo Bajo : Se procede con enrolamiento de cliente, no necesita autorización de
+                            Gerente General.
+                            <br>
+                            <br>
+                            -Cliente Riesgo Medio : Requiere autorización de enrolamiento por del Gerente General de
+                            la Administradora y obtener antecedentes exigidos en este
+                            nivel de riesgos.
+                            <br>
+                            <br>
+                            -Cliente Riesgo Alto : Requiere autorización de enrolamiento por del Gerente General de
+                            la Administradora y obtener antecedentes exigidos en este
+                            nivel de riesgos.
+                        </p>
+
+                        <div>
+                            <br>
+                        </div>
+                        <h4 style="text-decoration: underline;">Favor de responder el siguiente cuestonario para
+                            identificar su Perfil de Riesgo : </h4>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="row-md-4">
+                            <h4>1- ¿Cuanto tiempo está dispuesto a esperar para obtener ganancias de su inversión?</h4>
+                            <br>
+                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil1Opcion1" onclick="sumar(this)">
+                            <label>Menos de 1 año</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil1Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">De 1 a 5 años</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil1Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">Más de 5 años</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>2- ¿Que porcentaje de sus ahorros estaria dispuesto a invertir?</h4>
+                            <br>
+                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil2Opcion1" onclick="sumar(this)">
+                            <label>Menos del 30%</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil2Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">Entre 30% y 60&</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil2Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">Más del 60%</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>3- ¿Cual es el objetivo principal de su inversión?</h4>
+                            <br>
+                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil3Opcion1" onclick="sumar(this)">
+                            <label>Asegurar y mantener la capital invertida</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil3Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">Aumentar su patrimonio, con retornos estables</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil3Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">Que la inversion aumente sin importar los riesgos de
+                                esta</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>4- ¿Como ha generado el dinero que desea invertir?</h4>
+                            <br>
+                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil4Opcion1" onclick="sumar(this)">
+                            <label>Mediante trabajo</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil4Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">Mediante trabajo, más algunos ahorros</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil4Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">De otras rentas no relacionadas con las anteriores
+                                opciones</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>5- ¿Con que opción describiria su grado de conocimiento en inversiones?</h4>
+                            <br>
+                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil5Opcion1" onclick="sumar(this)">
+                            <label>Bajo</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil5Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">Medio</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil5Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">Alto</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>6- Con cual de las siguientes frases se identifica <br> de mejor manera : </h4>
+                            <br>
+                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil6Opcion1" onclick="sumar(this)">
+                            <label>"Invertiría mi dinero en instrumentos con poco riesgo, <br> aunque su rentabilidad
+                                sea
+                                baja"</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil6Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">"Decidiria buscar un equilibrio en mi inversion, <br>
+                                invertiria en intrumentos de bajo riesgo, con rentabilidad baja <br> y otra, en
+                                instrumentos
+                                más riesgosos, con una mayor rentabilidad "</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil6Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">"Invertiria un gran cantidad de dinero en instrumentos
+                                de alto riesgo, <br> aunque esto signifique asumir mayores riesgos"</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>7- Si su inversión comienza a perder valor, ¿que haría?</h4>
+                            <br>
+                            <input name="preguntaPerfil7" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil7Opcion1" onclick="sumar(this)">
+                            <label>Vender de forma inmediata</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil7" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil7Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">Consultar con un experto sobre que decisión
+                                tomar</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil7" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil7Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">Asumiría las perdidas en el corto plazo y esperaria
+                                obtener <br> ganacias en el largo plazo</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>8- La palabra riesgo para usted significa : </h4>
+                            <br>
+                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil8Opcion1" onclick="sumar(this)">
+                            <label>Peligro</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil8Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">Inestabilidad</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil8Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">Oportunidad</label>
+                            <br>
+                            <br>
+                            <hr>
+                            <h4>9- ¿Como espera que se desarrolle su capacidad de ahorro en los proximos años? </h4>
+                            <br>
+                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="1"
+                                id="preguntaPerfil9Opcion1" onclick="sumar(this)">
+                            <label>Disminuirá</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="2"
+                                id="preguntaPerfil9Opcion2" onclick="sumar(this)">
+                            <label style="padding-right: 35px;">Se mantendrá estable</label>
+                            <br>
+                            <br>
+                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="3"
+                                id="preguntaPerfil9Opcion3" onclick="sumar(this)">
+                            <label style="padding-right: 29px;">Aumentará</label>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <br>
+                        <hr>
+                        <br>
+                        <div id="divResultado">
+                            <button type="button" id="resultadoPerfilRiesgo" class="btn btn-outline-primary mb-4"
+                                onclick="mostrarResultado()">Mostrar Resultado del Cuestonario</button>
+                            <h5 style="font-weight: bold;">Resultado Perfil de Riesgo :</h5>
+                            <p id="perfilRiesgoRecuperado"></p>
+                            <p id="perfilRiesgoRecuperado"></p>
+                        </div>
+                        <div>
+                            <hr>
+                            <br>
+                            <h3>
+                                Indique su Perfil de Riesgo:
+                            </h3>
+                            <h5>*Este puede ser distinto al del resultado del cuestonario*</h5>
+                            <br>
+                            <div class="row">
+                                <div class="col-md-5">
+                                    <select class="form-select" name="selectPerfilRiesgo" id="opcionPerfilRiesgo">
+                                        <option value="" disabled>Seleccione 1 opción</option>
+                                        <option name="opcionPerfilRiesgo" id="opcionPerfilRiesgoBajo" value="0">
+                                            Bajo
+                                        </option>
+                                        <option name="opcionPerfilRiesgo" id="opcionPerfilRiesgoMedio" value="1">
+                                            Medio
+                                        </option>
+                                        <option name="opcionPerfilRiesgo" id="opcionPerfilRiesgoAlto" value="2">
+                                            Alto
+                                        </option>
+                                    </select>
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                            </div>
+                        </div>
+                        <hr>
+                        <br>
+                        <h2>Validar la Información : </h2> <!--15-->
+                        <br>
+                        <br>
+                        <div class="row-mb-6">
+                            <p>
+                                <span>
+                                    Certifico que la siguiente información contenida en el presente formulario es
+                                    verdadera y además ha sido verificada con la política de conocimiento a
+                                    su cliente de AAM S.A. (AAM S.A. Administradora de Activos considera todas las
+                                    entidades relacionadas a AAM S.A. Administradora de Activos), el
+                                    cliente hará con AAM S.A. Administradora de Activos operaciones con fondos lícitos
+                                    de acuerdo con lo establecido en las políticas de aceptación de
+                                    fondos.
+                                </span>
+                            </p>
+                            <br>
+                            <div class="input-group text-center">
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                        <input name="" class="form-check-input" type="radio" id="" disabled>
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                        <input name="" class="form-check-input" type="radio" id="">
+                                    </div>
+                                </div>
+                                <input type="text" readonly class="form-control"
+                                    value="He leído y confirmo la veracidad de toda la información ingresada"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                            </div>
+                            <br>
+                        </div>
+                    </div><!--ultimo div-->
+                    <br>
+                    <button id="generarPDF" type="reset" class="btn btn-primary mb-4">Generar PDF</button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

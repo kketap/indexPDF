@@ -1,0 +1,107 @@
+body {
+  zoom: 100%;
+  font-family:Arial, Helvetica, sans-serif;
+  transition: all 1s ease; /*transition a modo oscuro*/
+}
+ 
+.nav-item {
+  margin-left: 15px;
+}
+
+.navbar {
+  font-size: 120%;
+  display: flex;
+  position: fixed;
+  z-index: 1000; /* Ajustar según sea necesario para estar por encima de la herramienta de desarrollo */
+}
+
+
+.razon {
+  width: 10ch;
+}
+
+h1 {
+  text-align: center;
+}
+
+h2 {
+  text-align: center;
+}
+
+p {
+  font-size: 115%;
+  text-align: justify;
+}
+
+.row {
+  font-size: large;
+}
+
+textarea {
+  background-color: #dddddd;
+  color: #3e3232;
+  padding: 0.75em;
+  /* Reducido el padding */
+  border-radius: 5px;
+  /* Reducido el border-radius */
+  border: 1px solid #ccc;
+  /* Reducido el grosor del borde */
+  outline: none;
+  font-family: "Heebo", sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 1.4;
+  transition: all 0.2s;
+}
+
+textarea:hover {
+  cursor: pointer;
+  background-color: #eeeeee;
+}
+
+textarea:focus {
+  cursor: text;
+  color: #333333;
+  background-color: white;
+  border-color: #333333;
+}
+
+th {
+  border: solid;
+}
+
+td {
+  border: solid;
+}
+
+tr {
+  border: solid;
+}
+
+.pais-tax1,
+.pais-tax2 {
+  display: inline-block;
+  vertical-align: top;
+}
+
+.input-group-text .form-check-input[type="radio"] {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.form-check-input[type="radio"] {
+  border-style: solid;
+  border-width: 2px;
+  border-color: black;
+}
+
+.radio-container {
+  display: flex;
+  /* Enable flexbox */
+  justify-content: center;
+  /* Center the radio input within the label */
+  align-items: center;
+  /* Optionally, vertically center the radio if needed */
+  
+}

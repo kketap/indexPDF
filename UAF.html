@@ -1,0 +1,423 @@
+<!DOCTYPE html>
+<html lang="es-CL">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>UAF</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css"
+    integrity="sha512-SnH5WK+bZxgPHs44uWIX+LLJAJ9/2PkPKZ5QiAj6Ta86w+fsb2TkcmfRyVX3pBnMFcV7oQPJkl9QevSCWr3W6A=="
+    crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <!--libreria para el icon de la luna-->
+
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <!-- libreria bootstrap -->
+
+  <script src="jspdf.min.js"></script> <!-- libreria jsPDF -->
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/2.4.0/jspdf.umd.min.js"></script> <!-- libreria jsPDF -->
+
+  <script src="JS UAF/arreglosUAF.js"></script>
+  <script src="JS UAF/mostrarDefinicionUAF.js"></script>
+  <script src="JS UAF/recuperarDatosUAF.js"></script>
+  <script src="JS UAF/agregarCamposUAF.js"></script>
+
+  <link rel="stylesheet" href="css/style.css"> <!-- CSS-->
+  <link rel="stylesheet" href="css/modoOscuro.css">
+  <link rel="stylesheet" href="JS UAF/textoAdicionalUAF.css">
+
+</head>
+
+<body>
+  <nav class="navbar navbar-expand-lg bg-body-tertiary" id="navbar">
+    <div class="container-fluid">
+      <div class="collapse navbar-collapse" id="navbarSupportedContent">
+        <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              Ficha de Cliente Persona Jurídica
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="index.html">Regresar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              Ficha de Cliente Persona Natural
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="fichaPersonaNormal.html">Regresar</a></li>
+            </ul>
+          </li>
+          <li class="nav-item dropdown">
+            <a class="nav-link dropdown-toggle" href="#" role="button" data-toggle="dropdown">
+              UAF
+            </a>
+            <ul class="dropdown-menu">
+              <li><a class="dropdown-item" href="#inicio">Inicio</a></li>
+              <li><a class="dropdown-item" href="#benefFinales">Beneficiarios Finales</a></li>
+            </ul>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </nav>
+  <br>
+  <br>
+  <div class="container mt-3">
+    <label for="toggle" id="labelToggle"><i class="fa-solid fa-moon"></i></label>
+    <input type="checkbox" id="toggle"> <!--Cambiar a modo oscuro-->
+    <div class="col">
+      <div class="col-md-9 offset-md-2">
+        <h1 id="inicio">Formulario Ficha UAF</h1>
+        <br>
+        <hr>
+        <br>
+        <h2>Declaración Jurada para la Identificación de Beneficiarios
+          Finales de Personas y/o Estructuras Jurídicas
+        </h2>
+        <br>
+        <hr>
+        <br>
+        <h3>Las personas y estructuras jurídicas (PJ) que cumplan los requisitos dispuestos en la Circular Nº57/2017
+          de la Unidad de Análisis Financiero deberán proporcionar la siguiente información:
+        </h3>
+        <br>
+        <hr>
+        <form id="formUAF">
+          <div class="row mb-4">
+            <h3>
+              Esta declaración corresponde a:
+            </h3>
+            <br>
+            <br>
+            <div class="row">
+              <div class="col-md-8">
+                <select class="form-select" name="declaracionUAF" id="opcionDeclaracionUAF">
+                  <option value="" disabled>Seleccione 1 opción</option>
+                  <option name="opcionDeclaracionUAF" id="declaracionClienteNuevo" value="0">Cliente nuevo/ transacción
+                    única
+                  </option>
+                  <option name="opcionDeclaracionUAF" id="declaracionActualizacion" value="1">Actualización de datos
+                  </option>
+                  <option name="opcionDeclaracionUAF" id="declaracionSinCambios" value="2">Actualización de datos sin
+                    cambios
+                  </option>
+                </select>
+              </div>
+            </div>
+            <div></div>
+            <br>
+            <hr>
+            <h2>Antecedentes de la Persona o <br> Estructura Jurídica Declarante</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="rutUAF" class="form-label">RUT/Nº identificación</label>
+              <input type="text" name="rutUAF" placeholder="RUT/Nº identificación" class="form-control" id="rutUAF">
+            </div>
+            <div class="col-md-6">
+              <label for="razonUAF" class="form-label">Razón Social</label>
+              <input type="text" name="razonUAF" placeholder="Razón Social" class="form-control" id="razonUAF">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="domicilioUAF" class="form-label">Domicilio</label>
+              <input type="text" name="domicilioUAF" placeholder="Domicilio" class="form-control" id="domicilioUAF">
+            </div>
+            <div class="col-md-6">
+              <label for="ciudadUAF" class="form-label">Ciudad</label>
+              <input type="text" name="ciudadUAF" placeholder="Ciudad" class="form-control" id="ciudadUAF">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="paisUAF" class="form-label">País de Constitución</label>
+              <input type="text" name="paisUAF" placeholder="País de Constitución" class="form-control" id="paisUAF">
+            </div>
+            <div class="col-md-6">
+              <label for="telefonoUAF" class="form-label">Teléfono</label>
+              <input type="tel" name="telefonoUAF" placeholder="Teléfono" class="form-control" id="telefonoUAF"
+                maxlength="20">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="cniRepLegal" class="form-label">CNI/Nº identificación rep. legal</label>
+              <input type="text" name="cniRepLegal" placeholder="CNI/Nº identificación rep. legal" class="form-control"
+                id="cniRepLegal">
+            </div>
+            <div class="col-md-6">
+              <label for="nombre" class="form-label">Nombre Completo representante legal</label>
+              <input type="text" name="nombre" placeholder="Nombre representante legal" class="form-control"
+                id="nombreUAF" maxlength="20">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <h2>Tipo de Entidad</h2>
+            <br>
+            <br>
+            <br>
+            <div class="row">
+              <div class="col-md-6">
+                <select class="form-select" name="tipoEntidad" id="opcionTipoEntidad">
+                  <option value="" disabled>Seleccione 1 opción</option>
+                  <option value="0">Anónima</option>
+                  <option value="1">Colectiva</option>
+                  <option value="2">En comandita </option>
+                  <option value="3">Limitada</option>
+                  <option value="4">EIRL</option>
+                  <option value="5">Otra (completar)</option>
+                </select>
+              </div>
+            </div>
+            <div class="col-md-6">
+              <br>
+              <div>
+                <label for="inputTipoEntidad" class="form-label">Otra : </label>
+                <input type="text" class="form-control" id="inputTipoEntidad">
+              </div>
+              <br>
+              <br>
+            </div>
+            <div id="sinCambios" style="display: none;">
+              <hr>
+              <br>
+              <h2 id="benefFinales">Identificación De Los Beneficiarios Finales</h2>
+              <div class="row mb-4">
+                <p id="texto1" class="texto-completo1">
+                  Se entenderá como Beneficiarios Finales a la(s) persona(s) natural(es) que finalmente posee,
+                  <span class="puntos-suspensivos1" id="puntos-suspensivos1">...</span>
+                  <span class="texto-adicional1">
+                    directa o indirectamente, a través
+                    de sociedades u otros mecanismos, una participación igual o mayor al 10% del capital o de los
+                    derechos
+                    a voto de una persona
+                    jurídica determinada. Asimismo, se entenderá como Beneficiario Final a la(s) persona(s)
+                    natural(es)
+                    que, sin perjuicio de poseer
+                    directa o indirectamente una participación inferior al 10% del capital o de los derechos a voto de
+                    una
+                    persona jurídica, a través
+                    de sociedades u otros mecanismos, ejerce el control efectivo de la persona o estructura jurídica.
+                  </span>
+                </p>
+                <button type="button" id="alternarTexto1" class="btn btn-outline-primary mb-4">Mostrar
+                  Definición</button>
+              </div>
+              <hr>
+              <h2>Beneficiarios Finales </h2>
+              <h4>Identifique las personas naturales que tienen una participación en la persona o estructura jurídica
+                declarante igual o mayor al 10%.
+              </h4>
+              <br>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="idBenefUAF" class="form-label">CNI/ID</label>
+                  <input type="text" name="idBenefUAF" placeholder="CNI/ID" class="form-control" id="idBenefUAF">
+                </div>
+                <div class="col-md-6">
+                  <label for="nomCompletoAccio" class="form-label">Nombre Completo</label>
+                  <input type="text" name="nomCompletoAccio" placeholder="Nombre Completo" class="form-control"
+                    id="nomBenefUAF">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="domicilioBenefUAF" class="form-label">Domicilio</label>
+                  <input type="text" name="domicilioBenefUAF" placeholder="Domicilio" class="form-control"
+                    id="domicilioBenefUAF">
+                </div>
+                <div class="col-md-6">
+                  <label for="ciudadBenefUAF" class="form-label">Ciudad</label>
+                  <input type="text" name="ciudadBenefUAF" placeholder="Ciudad" class="form-control"
+                    id="ciudadBenefUAF">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="paisBenefUAF" class="form-label">País</label>
+                  <input type="text" name="paisBenefUAF" placeholder="País" class="form-control" id="paisBenefUAF">
+                </div>
+                <div class="col-md-6">
+                  <label for="porcentajeBenef" class="form-label">Porcentaje de participación</label>
+                  <input type="number" name="porcentajeBenef" placeholder="%" class="form-control"
+                    id="porcentajeBenefUAF" value="10" min="10" max="100">
+                </div>
+              </div>
+              <div class="mb-4"></div>
+              <button type="button" class="btn btn-outline-primary mb-4" id="agregarBenefUAF"> Agregar
+                Beneficiarios (Máximo 6) </button>
+              <button type="button" class="btn btn-outline-primary mb-4" id="limpiarBeneficiariosUAFBtn">
+                Limpiar a los Beneficiarios agregados
+              </button>
+              <div id="camposBenefFinalesUAF"></div>
+              <br>
+              <hr>
+              <h2>Control Efectivo</h2>
+              <br>
+              <h4>Identifique a las personas naturales que, sin perjuicio de poseer directa o indirectamente una
+                participación inferior al 10%, ejerce el control efectivo de la persona o estructura jurídica
+                declarante.
+              </h4>
+              <br>
+              <div class="row">
+                <div class="col-md-6">
+                  <label for="idBenefMenosUAF" class="form-label">CNI/ID</label>
+                  <input type="text" name="idBenefMenosUAF" placeholder="CNI/ID" class="form-control"
+                    id="idBenefMenosUAF">
+                </div>
+                <div class="col-md-6">
+                  <label for="nomBenefMenosUAF" class="form-label">Nombre Completo</label>
+                  <input type="text" name="nomBenefMenosUAF" placeholder="Nombre Completo" class="form-control"
+                    id="nomBenefMenosUAF">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="domicilioBenefMenosUAF" class="form-label">Domicilio</label>
+                  <input type="text" name="domicilioBenefMenosUAF" placeholder="Domicilio" class="form-control"
+                    id="domicilioBenefMenosUAF">
+                </div>
+                <div class="col-md-6">
+                  <label for="ciudadBenefMenosUAF" class="form-label">Ciudad</label>
+                  <input type="text" name="ciudadBenefMenosUAF" placeholder="Ciudad" class="form-control"
+                    id="ciudadBenefMenosUAF">
+                </div>
+                <br>
+                <br>
+                <br>
+                <div class="col-md-6">
+                  <label for="paisBenefMenosUAF" class="form-label">País</label>
+                  <input type="text" name="paisBenefMenosUAF" placeholder="País" class="form-control"
+                    id="paisBenefMenosUAF">
+                </div>
+                <br>
+                <div class="col-md-6">
+                  <label for="porcentajeMenosBenefUAF" class="form-label">Porcentaje de participación</label>
+                  <input type="number" name="porcentajeMenosBenefUAF" placeholder="%" class="form-control"
+                    id="porcentajeBenefMenosUAF" value="1" min="1" max="10">
+                </div>
+              </div>
+              <div class="mb-4"></div>
+              <button type="button" class="btn btn-outline-primary mb-4" id="agregarBenefMenosUAF"> Agregar
+                Personas Naturales con un % de participación menor al 10% (Máximo 6) </button>
+              <button type="button" class="btn btn-outline-primary mb-4" id="limpiarBeneficiariosMenosUAFBtn">
+                Limpiar a las Personas Naturales agregadas
+              </button>
+              <div id="camposBenefMenosUAF"></div>
+            </div>
+            <br>
+            <hr>
+            <h2>Actualización de Datos sin Cambios</h2>
+            <br>
+            <h4>Para el caso de clientes personas o estructuras jurídicas que no hayan sufrido cambios en sus
+              Beneficiarios Finales dentro del plazo de un año desde su última declaración, favor indique:
+            </h4>
+            <br>
+            <br>
+            <br>
+            <br>
+            <div class="row-md-6">
+              <div class="col">
+                <input style="width: 80px;" type="text"><span> </span><span class="form-check-inline">Se reitera
+                  información
+                  de Declaración Jurada N°</span><input style="width: 100px;" type="text">
+                <br>
+                <span class="form-check-inline">de fecha</span><input style="width: 100px;" type="text">
+                <span class="form-check-inline">, en cuanto a que no ha habido cambios</span>
+                <span class="form-check-inline">en los beneficiarios finales de la persona o estructura jurídica arriba
+                  individualizada.</span>
+              </div>
+              <br>
+              <br>
+            </div>
+            <br>
+            <br>
+            <br>
+            <hr>
+            <h2>Antecedentes de la Persona Natural que realiza la presente Declaración</h2>
+            <br>
+            <br>
+            <br>
+            <br>
+            <h4>Nacionalidad : </h4>
+            <br>
+            <br>
+            <div class="col-md-8">
+              <select class="form-select" name="nacionalidadUAF" id="opcionnacionalidadUAF">
+                <option value="" disabled>Seleccione 1 opción</option>
+                <option value="0">Chilena</option>
+                <option value="1">Extranjera</option>
+                <option value="2">Extranjera no residente</option>
+              </select>
+            </div>
+            <div></div>
+            <br>
+            <div class="col-md-6">
+              <label for="cniUAF" class="form-label">CNI/Nº Identificación </label>
+              <input type="text" name="cniUAF" placeholder="CNI/Nº Identificación " class="form-control" id="cniUAF">
+            </div>
+            <br>
+            <div class="col-md-6">
+              <label for="nombreCompletoPerNatu" class="form-label">Nombres y Apellidos</label>
+              <input type="text" name="nombreCompletoPerNatu" placeholder="Nombre Completo" class="form-control"
+                id="nombreCompletoUAF">
+            </div>
+            <br>
+            <br>
+            <br>
+            <div class="col-md-6">
+              <label for="residenciaPerNatu" class="form-label">Lugar de origen</label>
+              <input type="text" name="residenciaPerNatu" placeholder="Lugar de origen" class="form-control"
+                id="origenUAF">
+            </div>
+            <br>
+            <div class="col-md-6">
+              <label for="residenciaPerNatu" class="form-label">Relación con la persona jurídica declarante</label>
+              <input type="text" name="residenciaPerNatu" class="form-control" id="residenciaPerNatu">
+            </div>
+            <br>
+            <br>
+            <br>
+            <br>
+            <span>Declaro bajo juramento, que la información proporcionada en este formulario es completamente
+              veraz.</span>
+            <br>
+            <br>
+            <br>
+            <div class="row-md-2">
+              <div class="col">
+                <span class="form-check-inline">En</span><input style="width: 90px;" type="text">
+                <span class="form-check-inline">, a</span><input style="width: 90px;" type="text">
+                <span class="form-check-inline">de</span><input style="width: 90px;" type="text">
+                <span class="form-check-inline">de 20</span><input style="width: 90px;" type="text">
+              </div>
+            </div>
+          </div> <!--ultimo div-->
+        </form>
+        <br>
+        <br>
+        <br>
+        <br>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>
