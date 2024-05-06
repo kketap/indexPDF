@@ -64,12 +64,22 @@
             width: 10ch;
         }
 
+        hr {
+
+            border: solid;
+            color: rgb(0, 0, 0);
+        }
+
         h1 {
             text-align: center;
+
+
         }
 
         h2 {
             text-align: center;
+            text-decoration: underline;
+            font-weight: bold;
         }
 
         p {
@@ -154,8 +164,9 @@
     <br>
     <div class="container mt-5">
         <div class="col">
-            <div class="col-md-8 offset-md-2">
-                <h1 style="text-align: center;">Formulario Ficha de Cliente <br> Persona Jurídica</h1>
+            <div class="col-md-9 offset-md-2">
+                <h1 style="text-align: center; font-weight: bold;">Formulario Ficha de Cliente <br> Persona Jurídica
+                </h1>
                 <hr id="infoEmpresa">
                 <form id="form">
                     <div class="row mb-4">
@@ -277,7 +288,7 @@
                             jurídica.
 
                         </p>
-
+                        <br>
                         <br>
                         <br>
                         <div class="input-group text-center">
@@ -287,23 +298,290 @@
 
                             <div class="input-group-text">
                                 <div class="form-check form-check-inline">
-                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <label class="form-check-label">Si</label>
                                     <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
                                         value="0" id="accionistaBenefSi">
                                 </div>
                             </div>
                             <div class="input-group-text">
                                 <div class="form-check form-check-inline">
-                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <label class="form-check-label">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br> <!--accio 2-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonAccio" class="form-label">Razón Social (2)</label>
+                            <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (2)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomCompletoAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (2)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista (2) considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br> <!--accio 3-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonAccio" class="form-label">Razón Social (3)</label>
+                            <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (3)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomCompletoAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (3)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista (3) considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br> <!--accio 4-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonAccio" class="form-label">Razón Social (4)</label>
+                            <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (4)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomCompletoAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (4)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista (4) considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br> <!--accio 5-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonAccio" class="form-label">Razón Social (5)</label>
+                            <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (5)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomCompletoAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (5)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista (5) considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br> <!--accio 6-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonAccio" class="form-label">Razón Social (6)</label>
+                            <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (6)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomCompletoAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (6)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista (6) considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">No</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="1" id="accionistaBenefNo">
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br> <!--accio 7-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="razonAccio" class="form-label">Razón Social (7)</label>
+                            <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (7)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomCompletoAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (7)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutAccio">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="¿Es el accionista (7) considerado beneficiario final?"
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">Si</label>
+                                    <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                        value="0" id="accionistaBenefSi">
+                                </div>
+                            </div>
+                            <div class="input-group-text">
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label">No</label>
                                     <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
                                         value="1" id="accionistaBenefNo">
                                 </div>
                             </div>
                         </div>
                         <div class="mb-4"></div> <!-- Espacio entre el último div y el botón -->
-
-                        <div id="camposAccionista"></div>
-
                         <br>
                         <br>
                         <hr>
@@ -330,19 +608,177 @@
                         <br>
                         <div class="col-md-6">
                             <label for="porcentajeBenef" class="form-label">Porcentaje de participación</label>
-                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef"
-                                >
+                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef">
+                        </div>
+                        <div>
+                            <br> <!--benef 2-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (2)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (2)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionBenef" class="form-label">Dirección (2)</label>
+                            <input type="text" name="direccionBenef" "Dirección" class="form-control"
+                                id="direccionBenef">
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="porcentajeBenef" class="form-label">Porcentaje de participación (2)</label>
+                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef">
+                        </div>
+                        <div>
+                            <br> <!--benef 3-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (3)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (3)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionBenef" class="form-label">Dirección (3)</label>
+                            <input type="text" name="direccionBenef" "Dirección" class="form-control"
+                                id="direccionBenef">
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="porcentajeBenef" class="form-label">Porcentaje de participación (3)</label>
+                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef">
+                        </div>
+                        <div>
+                            <br> <!--benef 4-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (4)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (4)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionBenef" class="form-label">Dirección (4)</label>
+                            <input type="text" name="direccionBenef" "Dirección" class="form-control"
+                                id="direccionBenef">
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="porcentajeBenef" class="form-label">Porcentaje de participación (4)</label>
+                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef">
+                        </div>
+                        <div>
+                            <br> <!--benef 5-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (5)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (5)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionBenef" class="form-label">Dirección (5)</label>
+                            <input type="text" name="direccionBenef" "Dirección" class="form-control"
+                                id="direccionBenef">
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="porcentajeBenef" class="form-label">Porcentaje de participación (5)</label>
+                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef">
+                        </div>
+                        <div>
+                            <br> <!--benef 6-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (6)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (6)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionBenef" class="form-label">Dirección (6)</label>
+                            <input type="text" name="direccionBenef" "Dirección" class="form-control"
+                                id="direccionBenef">
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="porcentajeBenef" class="form-label">Porcentaje de participación (6)</label>
+                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef">
+                        </div>
+                        <div>
+                            <br> <!--benef 7-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nomCompletoAccio" class="form-label">Nombre Completo (7)</label>
+                            <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                id="nomBenef">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAccio" class="form-label">RUT (7)</label>
+                            <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionBenef" class="form-label">Dirección (7)</label>
+                            <input type="text" name="direccionBenef" "Dirección" class="form-control"
+                                id="direccionBenef">
+                        </div>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="porcentajeBenef" class="form-label">Porcentaje de participación (7)</label>
+                            <input type="number" name="porcentajeBenef" "%" class="form-control" id="porcentajeBenef">
                         </div>
                         <div class="mb-4"></div>
-
-                        <div id="camposBenefFinales"></div>
-
                         <br>
                         <br>
                         <br>
                         <hr>
                         <br>
-                        <h2>Identificación del Gerente o Representante Legal</h2> <!-- 2 -->
+                        <h2>Identificación del Gerente o <br> Representante Legal</h2> <!-- 2 -->
                         <br>
                         <br>
                         <br>
@@ -401,14 +837,66 @@
                             <input type="tel" name="telefono2Gerente" "Telefóno 2" class="form-control"
                                 id="telefono2Gerente">
                         </div>
+                        <div>
+                            <br> <!--repre 2-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreGerente" class="form-label">Nombre Completo (2)</label>
+                            <input type="text" name="nombreGerente" "Nombre Completo" class="form-control"
+                                id="nombreGerente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutGerente" class="form-label">RUT (2)</label>
+                            <input type="text" name="rutGerente" class="form-control" id="rutGerente">
+                        </div>
                         <br>
                         <br>
                         <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadGerente" class="form-label">Nacionalidad (2)</label>
+                            <input type="text" name="nacionalidadGerente" "Nacionalidad" class="form-control"
+                                id="nacionalidadGerente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoGerente" class="form-label">Correo Electrónico (2)</label>
+                            <input type="email" name="correoGerente" "Correo Electrónico" class="form-control"
+                                id="correoGerente">
+                        </div>
                         <br>
-
-
-                        <div id="camposGerente"></div>
-
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionGerente" class="form-label">Dirección (2)</label>
+                            <input type="text" name="direccionGerente" "Dirección" class="form-control"
+                                id="direccionGerente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaGerente" class="form-label">Comuna (2)</label>
+                            <input type="text" name="comunaGerente" "Comuna" class="form-control" id="comunaGerente">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilGerente" class="form-label">Estado Civil (2)</label>
+                            <input type="text" name="estadoCivilGerente" "Estado Civil" class="form-control"
+                                id="estadoCivilGerente">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Gerente" class="form-label">Teléfono 1 (2)</label>
+                            <input type="tel" name="telefono1Gerente" "Teléfono 1" class="form-control"
+                                id="telefono1Gerente">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Gerente" class="form-label">Telefóno 2 (2)</label>
+                            <input type="tel" name="telefono2Gerente" "Telefóno 2" class="form-control"
+                                id="telefono2Gerente">
+                        </div>
                         <br>
                         <br>
                         <br>
@@ -473,15 +961,372 @@
                             <input type="tel" name="telefono2Apoderado" "Telefóno 2" class="form-control"
                                 id="telefono2Apoderado">
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-
-                        <div id="camposApoderados">
-                            <!-- Los Apoderados se agregan en este div -->
+                        <div>
+                            <br> <!--apoderado 2-->
                         </div>
-
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreApoderado" class="form-label">Nombre Completo (2)</label>
+                            <input type="text" name="nombreApoderado" "Nombre Completo" class="form-control"
+                                id="nombreApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutApoderado" class="form-label">RUT (2)</label>
+                            <input type="text" name="rutApoderado" class="form-control" id="rutApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadApoderado" class="form-label">Nacionalidad (2)</label>
+                            <input type="text" name="nacionalidadApoderado" "Nacionalidad" class="form-control"
+                                id="nacionalidadApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoApoderado" class="form-label">Correo Electrónico (2)</label>
+                            <input type="email" name="correoApoderado" "Correo Electrónico" class="form-control"
+                                id="correoApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionApoderado" class="form-label">Dirección (2)</label>
+                            <input type="text" name="direccionApoderado" "Dirección" class="form-control"
+                                id="direccionApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaApoderado" class="form-label">Comuna (2)</label>
+                            <input type="text" name="comunaApoderado" "Comuna" class="form-control"
+                                id="comunaApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilApoderado" class="form-label">Estado Civil (2)</label>
+                            <input type="text" name="estadoCivilApoderado" "Estado Civil" class="form-control"
+                                id="estadoCivilApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Apoderado" class="form-label">Telefóno 1 (2)</label>
+                            <input type="tel" name="telefono1Apoderado" "Telefóno 1" class="form-control"
+                                id="telefono1Apoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Apoderado" class="form-label">Telefóno 2 (2)</label>
+                            <input type="tel" name="telefono2Apoderado" "Telefóno 2" class="form-control"
+                                id="telefono2Apoderado">
+                        </div>
+                        <div>
+                            <br> <!--apoderado 3-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreApoderado" class="form-label">Nombre Completo (3)</label>
+                            <input type="text" name="nombreApoderado" "Nombre Completo" class="form-control"
+                                id="nombreApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutApoderado" class="form-label">RUT (3)</label>
+                            <input type="text" name="rutApoderado" class="form-control" id="rutApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadApoderado" class="form-label">Nacionalidad (3)</label>
+                            <input type="text" name="nacionalidadApoderado" "Nacionalidad" class="form-control"
+                                id="nacionalidadApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoApoderado" class="form-label">Correo Electrónico (3)</label>
+                            <input type="email" name="correoApoderado" "Correo Electrónico" class="form-control"
+                                id="correoApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionApoderado" class="form-label">Dirección (3)</label>
+                            <input type="text" name="direccionApoderado" "Dirección" class="form-control"
+                                id="direccionApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaApoderado" class="form-label">Comuna (3)</label>
+                            <input type="text" name="comunaApoderado" "Comuna" class="form-control"
+                                id="comunaApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilApoderado" class="form-label">Estado Civil (3)</label>
+                            <input type="text" name="estadoCivilApoderado" "Estado Civil" class="form-control"
+                                id="estadoCivilApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Apoderado" class="form-label">Telefóno 1 (3)</label>
+                            <input type="tel" name="telefono1Apoderado" "Telefóno 1" class="form-control"
+                                id="telefono1Apoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Apoderado" class="form-label">Telefóno 2 (3)</label>
+                            <input type="tel" name="telefono2Apoderado" "Telefóno 2" class="form-control"
+                                id="telefono2Apoderado">
+                        </div>
+                        <div>
+                            <br> <!--apoderado 4-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreApoderado" class="form-label">Nombre Completo (4)</label>
+                            <input type="text" name="nombreApoderado" "Nombre Completo" class="form-control"
+                                id="nombreApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutApoderado" class="form-label">RUT (4)</label>
+                            <input type="text" name="rutApoderado" class="form-control" id="rutApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadApoderado" class="form-label">Nacionalidad (4)</label>
+                            <input type="text" name="nacionalidadApoderado" "Nacionalidad" class="form-control"
+                                id="nacionalidadApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoApoderado" class="form-label">Correo Electrónico (4)</label>
+                            <input type="email" name="correoApoderado" "Correo Electrónico" class="form-control"
+                                id="correoApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionApoderado" class="form-label">Dirección (4)</label>
+                            <input type="text" name="direccionApoderado" "Dirección" class="form-control"
+                                id="direccionApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaApoderado" class="form-label">Comuna (4)</label>
+                            <input type="text" name="comunaApoderado" "Comuna" class="form-control"
+                                id="comunaApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilApoderado" class="form-label">Estado Civil (4)</label>
+                            <input type="text" name="estadoCivilApoderado" "Estado Civil" class="form-control"
+                                id="estadoCivilApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Apoderado" class="form-label">Telefóno 1 (4)</label>
+                            <input type="tel" name="telefono1Apoderado" "Telefóno 1" class="form-control"
+                                id="telefono1Apoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Apoderado" class="form-label">Telefóno 2 (4)</label>
+                            <input type="tel" name="telefono2Apoderado" "Telefóno 2" class="form-control"
+                                id="telefono2Apoderado">
+                        </div>
+                        <div>
+                            <br> <!--apoderado 5-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreApoderado" class="form-label">Nombre Completo (5)</label>
+                            <input type="text" name="nombreApoderado" "Nombre Completo" class="form-control"
+                                id="nombreApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutApoderado" class="form-label">RUT (5)</label>
+                            <input type="text" name="rutApoderado" class="form-control" id="rutApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadApoderado" class="form-label">Nacionalidad (5)</label>
+                            <input type="text" name="nacionalidadApoderado" "Nacionalidad" class="form-control"
+                                id="nacionalidadApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoApoderado" class="form-label">Correo Electrónico (5)</label>
+                            <input type="email" name="correoApoderado" "Correo Electrónico" class="form-control"
+                                id="correoApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionApoderado" class="form-label">Dirección (5)</label>
+                            <input type="text" name="direccionApoderado" "Dirección" class="form-control"
+                                id="direccionApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaApoderado" class="form-label">Comuna (5)</label>
+                            <input type="text" name="comunaApoderado" "Comuna" class="form-control"
+                                id="comunaApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilApoderado" class="form-label">Estado Civil (5)</label>
+                            <input type="text" name="estadoCivilApoderado" "Estado Civil" class="form-control"
+                                id="estadoCivilApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Apoderado" class="form-label">Telefóno 1 (5)</label>
+                            <input type="tel" name="telefono1Apoderado" "Telefóno 1" class="form-control"
+                                id="telefono1Apoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Apoderado" class="form-label">Telefóno 2 (5)</label>
+                            <input type="tel" name="telefono2Apoderado" "Telefóno 2" class="form-control"
+                                id="telefono2Apoderado">
+                        </div>
+                        <div>
+                            <br> <!--apoderado 6-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreApoderado" class="form-label">Nombre Completo (6)</label>
+                            <input type="text" name="nombreApoderado" "Nombre Completo" class="form-control"
+                                id="nombreApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutApoderado" class="form-label">RUT (6)</label>
+                            <input type="text" name="rutApoderado" class="form-control" id="rutApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadApoderado" class="form-label">Nacionalidad (6)</label>
+                            <input type="text" name="nacionalidadApoderado" "Nacionalidad" class="form-control"
+                                id="nacionalidadApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoApoderado" class="form-label">Correo Electrónico (6)</label>
+                            <input type="email" name="correoApoderado" "Correo Electrónico" class="form-control"
+                                id="correoApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionApoderado" class="form-label">Dirección (6)</label>
+                            <input type="text" name="direccionApoderado" "Dirección" class="form-control"
+                                id="direccionApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaApoderado" class="form-label">Comuna (6)</label>
+                            <input type="text" name="comunaApoderado" "Comuna" class="form-control"
+                                id="comunaApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilApoderado" class="form-label">Estado Civil (6)</label>
+                            <input type="text" name="estadoCivilApoderado" "Estado Civil" class="form-control"
+                                id="estadoCivilApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Apoderado" class="form-label">Telefóno 1 (6)</label>
+                            <input type="tel" name="telefono1Apoderado" "Telefóno 1" class="form-control"
+                                id="telefono1Apoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Apoderado" class="form-label">Telefóno 2 (6)</label>
+                            <input type="tel" name="telefono2Apoderado" "Telefóno 2" class="form-control"
+                                id="telefono2Apoderado">
+                        </div>
+                        <div>
+                            <br> <!--apoderado 7-->
+                        </div>
+                        <hr>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nombreApoderado" class="form-label">Nombre Completo (7)</label>
+                            <input type="text" name="nombreApoderado" "Nombre Completo" class="form-control"
+                                id="nombreApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutApoderado" class="form-label">RUT (7)</label>
+                            <input type="text" name="rutApoderado" class="form-control" id="rutApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadApoderado" class="form-label">Nacionalidad (7)</label>
+                            <input type="text" name="nacionalidadApoderado" "Nacionalidad" class="form-control"
+                                id="nacionalidadApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoApoderado" class="form-label">Correo Electrónico (7)</label>
+                            <input type="email" name="correoApoderado" "Correo Electrónico" class="form-control"
+                                id="correoApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionApoderado" class="form-label">Dirección (7)</label>
+                            <input type="text" name="direccionApoderado" "Dirección" class="form-control"
+                                id="direccionApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaApoderado" class="form-label">Comuna (7)</label>
+                            <input type="text" name="comunaApoderado" "Comuna" class="form-control"
+                                id="comunaApoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilApoderado" class="form-label">Estado Civil (7)</label>
+                            <input type="text" name="estadoCivilApoderado" "Estado Civil" class="form-control"
+                                id="estadoCivilApoderado">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1Apoderado" class="form-label">Telefóno 1 (7)</label>
+                            <input type="tel" name="telefono1Apoderado" "Telefóno 1" class="form-control"
+                                id="telefono1Apoderado">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2Apoderado" class="form-label">Telefóno 2 (7)</label>
+                            <input type="tel" name="telefono2Apoderado" "Telefóno 2" class="form-control"
+                                id="telefono2Apoderado">
+                        </div>
                         <br>
                         <br>
                         <br>
@@ -541,15 +1386,116 @@
                             <label for="telefono2AAM" class="form-label">Telefóno 2</label>
                             <input type="tel" name="telefono2AAM" "Telefóno 2" class="form-control" id="telefono2AAM">
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-
-                        <br>
-                        <div id="camposAAM"> <!-- Aquí se agregan los campos AAM -->
+                        <div>
+                            <br> <!--aam 2-->
                         </div>
-
+                        <hr>
+                        <div class="col-md-6">
+                            <label for="nombreAAM" class="form-label">Nombre Completo (2)</label>
+                            <input type="text" name="nombreAAM" "Nombre Completo" class="form-control" id="nombreAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAAM" class="form-label">RUT (2)</label>
+                            <input type="text" name="rutAAM" class="form-control" id="rutAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadAAM" class="form-label">Nacionalidad (2)</label>
+                            <input type="text" name="nacionalidadAAM" "Nacionalidad" class="form-control"
+                                id="nacionalidadAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoAAM" class="form-label">Correo Electrónico (2)</label>
+                            <input type="email" name="correoAAM" "Correo Electrónico" class="form-control"
+                                id="correoAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionAAM" class="form-label">Dirección (2)</label>
+                            <input type="text" name="direccionAAM" "Dirección" class="form-control" id="direccionAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaAAM" class="form-label">Comuna (2)</label>
+                            <input type="text" name="comunaAAM" "Comuna" class="form-control" id="comunaAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilAAM" class="form-label">Estado Civil (2)</label>
+                            <input type="text" name="estadoCivilAAM" "Estado Civil" class="form-control"
+                                id="estadoCivilAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1AAM" class="form-label">Telefóno 1 (2)</label>
+                            <input type="tel" name="telefono1AAM" "Telefóno 1" class="form-control" id="telefono1AAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2AAM" class="form-label">Telefóno 2 (2)</label>
+                            <input type="tel" name="telefono2AAM" "Telefóno 2" class="form-control" id="telefono2AAM">
+                        </div>
+                        <div>
+                            <br> <!--aam 3-->
+                        </div>
+                        <hr>
+                        <div class="col-md-6">
+                            <label for="nombreAAM" class="form-label">Nombre Completo (3)</label>
+                            <input type="text" name="nombreAAM" "Nombre Completo" class="form-control" id="nombreAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="rutAAM" class="form-label">RUT (3)</label>
+                            <input type="text" name="rutAAM" class="form-control" id="rutAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="nacionalidadAAM" class="form-label">Nacionalidad (3)</label>
+                            <input type="text" name="nacionalidadAAM" "Nacionalidad" class="form-control"
+                                id="nacionalidadAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="correoAAM" class="form-label">Correo Electrónico (3)</label>
+                            <input type="email" name="correoAAM" "Correo Electrónico" class="form-control"
+                                id="correoAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="direccionAAM" class="form-label">Dirección (3)</label>
+                            <input type="text" name="direccionAAM" "Dirección" class="form-control" id="direccionAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="comunaAAM" class="form-label">Comuna (3)</label>
+                            <input type="text" name="comunaAAM" "Comuna" class="form-control" id="comunaAAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="estadoCivilAAM" class="form-label">Estado Civil (3)</label>
+                            <input type="text" name="estadoCivilAAM" "Estado Civil" class="form-control"
+                                id="estadoCivilAAM">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="telefono1AAM" class="form-label">Telefóno 1 (3)</label>
+                            <input type="tel" name="telefono1AAM" "Telefóno 1" class="form-control" id="telefono1AAM">
+                        </div>
+                        <br>
+                        <br>
+                        <br>
+                        <div class="col-md-6">
+                            <label for="telefono2AAM" class="form-label">Telefóno 2 (3)</label>
+                            <input type="tel" name="telefono2AAM" "Telefóno 2" class="form-control" id="telefono2AAM">
+                        </div>
                         <br>
                         <br>
                         <br>
@@ -773,18 +1719,70 @@
                                 </tr>
                             </tbody>
                         </table>
-                        <br>
-                        <br>
-
-                        <br>
-                        <div id="camposCtasCorrientes"> <!-- Aquí se agrega la cuenta corriente-->
+                        <div>
+                            <br> <!-- cta corriente 2-->
                         </div>
-                        <br>
-                        <br>
-                        <br>
                         <hr>
                         <br>
-                        <h2>DECLARACIÓN DE ORIGEN DE FONDOS : </h2> <!-- 16 -->
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Moneda</th>
+                                    <th scope="col">Banco (2)</th>
+                                    <th scope="col">Tipo de Cuenta (2)</th>
+                                    <th scope="col">N° de Cuenta (2)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">CLP</th>
+                                    <td><input type="text" id="bancoCLP"></td>
+                                    <td><input type="text" id="tipoCuentaCLP"></td>
+                                    <td><input type="text" id="nCuentaCLP"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">USS</th>
+                                    <td><input type="text" id="bancoUSS"></td>
+                                    <td><input type="text" id="tipoCuentaUSS"></td>
+                                    <td><input type="text" id="nCuentaUSS"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <br> <!-- cta corriente 3-->
+                        </div>
+                        <hr>
+                        <br>
+                        <table class="table table-bordered">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Moneda</th>
+                                    <th scope="col">Banco (3)</th>
+                                    <th scope="col">Tipo de Cuenta (3)</th>
+                                    <th scope="col">N° de Cuenta (3)</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">CLP</th>
+                                    <td><input type="text" id="bancoCLP"></td>
+                                    <td><input type="text" id="tipoCuentaCLP"></td>
+                                    <td><input type="text" id="nCuentaCLP"></td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">USS</th>
+                                    <td><input type="text" id="bancoUSS"></td>
+                                    <td><input type="text" id="tipoCuentaUSS"></td>
+                                    <td><input type="text" id="nCuentaUSS"></td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <div>
+                            <br> <!-- cta corriente 3-->
+                        </div>
+                        <hr>
+                        <br>
+                        <h2>DECLARACIÓN DE <br> ORIGEN DE FONDOS : </h2> <!-- 16 -->
                         <br>
                         <br>
                         <div class="row mb-4">
@@ -874,11 +1872,8 @@
                             </div>
                         </div>
                         <div class="col-md-6">
-                            <div>
-                                <label for="inputFuenteRenta" class="form-label">Fuente de Ingresos : </label>
-                                <input type="text" class="form-control" id="inputFuenteRenta">
-                            </div>
-                            <br>
+                            <label for="inputFuenteRenta" class="form-label">Fuente de Ingresos : </label>
+                            <input type="text" class="form-control" id="inputFuenteRenta">
                         </div>
                         <br>
                         <br>
@@ -934,34 +1929,101 @@
                         <br>
                         <br>
                         <br>
-                        <div class="mb-2">
-                            <select class="form-select" name="actClientes" id="opcionActCliente">
-                                <option value="" disabled>Seleccione 1 opción</option>
-                                <option value="0">Casino-Juego</option>
-                                <option value="1">Notaría</option>
-                                <option value="2">Agencia de viajes </option>
-                                <option value="3">Inv. Turísticas </option>
-                                <option value="4">Construcción </option>
-                                <option value="5">Inv. De Empresas </option>
-                                <option value="6">Automotoras </option>
-                                <option value="7">Casas de Cambio </option>
-                                <option value="8">Conservador de Bienes Raíces </option>
-                                <option value="9">Agentes de Aduana </option>
-                                <option value="10">Act. Sin Fines de Lucro </option>
-                                <option value="11">Otros (completar) </option>
-                            </select>
+                        <div class="row mb-4">
+                            <div class="col-md-4">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="casinoJuego" value="0">
+                                    <label for="casinoJuego" class="form-check-label">Casino-Juego</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input" id="notaria"
+                                        value="1">
+                                    <label for="notaria" class="form-check-label">Notaría</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Agencia de viajes</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Inv. Turísticas</label>
+                                </div>
+                            </div>
                             <br>
+                            <br>
+                            <br>
+                            <div class="col-md-4">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Construcción</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Inv. De Empresas</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Automotoras </label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Casas de Cambio</label>
+                                </div>
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="col-md-4">
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Conservador de Bienes Raíces
+                                    </label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Agentes de Aduana</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Act. Sin Fines de Lucro</label>
+                                </div>
+                                <br>
+                                <div class="form-check form-check-inline">
+                                    <input type="radio" name="opcionActCliente" class="form-check-input"
+                                        id="agenciaViajes" value="2">
+                                    <label for="agenciaViajes" class="form-check-label">Otros (completar)</label>
+                                </div>
+                            </div>
                             <div class="col-md-6">
                                 <div>
                                     <label for="inputActCliente" class="form-label">Otros : </label>
                                     <input type="text" class="form-control" id="inputActCliente">
                                 </div>
                             </div>
-                            <br>
                         </div>
-
-                        <br>
+                        <div>
+                            <br>
+                        </div>                       
                         <hr>
+                        <br>                        
                         <h2 id="declaracion">DECLARACIÓN DE PERSONAS EXPUESTAS POLÍTICAMENTE (PEP) : </h2> <!-- 13 -->
                         <br>
                         <br>
@@ -974,75 +2036,74 @@
                                 consanguinidad, y las personas naturales con las que hayan
                                 celebrado un pacto de actuación conjunta, mediante el cual tengan poder de voto
                                 suficiente para influir en sociedades constituidas en Chile.
-
                             </p>
-
                             <br>
                             <hr>
                             <h2>Se entiende como Sociedades o Entidades Expuestas Políticamente (PEP):</h2>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <p id="texto2" class="texto-completo2">
-                                <span class="texto-adicional2">
-                                    - Las que hayan sido creadas por personas que ostentan la calidad de PEP, y que
-                                    tengan una participación mínima de un 10% de la propiedad.
-
-                                    <br>
-                                    - A su vez, la (s) persona(s) natural(es) que, sin perjuicio de poseer directa o
-                                    indirectamente una participación inferior al 10% del capital o de los derechos a
-                                    voto de una persona o estructura jurídicas, a través de sociedades u otro
-                                    mecanismo, ejerce el control efectivo en la toma de decisiones de la persona o
-                                    estructura jurídicas.
-
-                                    <br>
-                                    - También sus directores, representantes legales y controladores de la empresa
-                                    que trabajan o han trabajado en algunas de las funciones públicas.
-                                </span>
+                                - Las que hayan sido creadas por personas que ostentan la calidad de PEP, y que
+                                tengan una participación mínima de un 10% de la propiedad.
+                                <br>
+                                - A su vez, la (s) persona(s) natural(es) que, sin perjuicio de poseer directa o
+                                indirectamente una participación inferior al 10% del capital o de los derechos a
+                                voto de una persona o estructura jurídicas, a través de sociedades u otro
+                                mecanismo, ejerce el control efectivo en la toma de decisiones de la persona o
+                                estructura jurídicas.
+                                <br>
+                                - También sus directores, representantes legales y controladores de la empresa
+                                que trabajan o han trabajado en algunas de las funciones públicas.
                             </p>
-
                             <br>
                             <hr>
                             <h2>Funciones y Personas que son consideradas como PEP:</h2>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <p id="texto3" class="texto-completo3">
-                                <span class="texto-adicional3">
-                                    Funciones públicas: Comprenden en esta categoría a jefes de Estado o de un
-                                    Gobierno, políticos de alta jerarquía, funcionarios gubernamentales, judiciales
-                                    o militares de alta jerarquía y altos ejecutivos de empresas estatales.
-                                    <br>
-                                    Se califican PEP a las siguientes personas:
-                                    <br>
-                                    -Presidente de la República, Senadores, Diputados y Alcaldes.
-                                    <br>
-                                    -Ministros de la Corte Suprema y Cortes de Apelaciones.
-                                    <br>
-                                    -Ministros de Estado, Subsecretarios, Intendentes, Gobernadores, Secretarios
-                                    Regionales Ministeriales, Embajadores, Jefes Superiores de Servicio,
-                                    tanto centralizados como descentralizados y el directivo superior
-                                    inmediato que deba subrogar a cada uno de ellos.
-                                    <br>
-                                    -Comandantes en Jefe de las Fuerzas Armadas, Director General
-                                    Carabineros, Director General de Investigaciones, y el oficial superior
-                                    inmediato que deba subrogar a cada uno de ellos.
-                                    <br>
-                                    -Fiscal Nacional del Ministerio Público y Fiscales Regionales.
-                                    <br>
-                                    -Contralor General de la República Consejeros del Banco Central de Chile.
-                                    <br>
-                                    -Consejeros del Consejo de Defensa del Estado.
-                                    <br>
-                                    -Ministros del Tribunal Constitucional.
-                                    <br>
-                                    -Ministros del Tribunal de la Libre Competencia.
-                                    <br>
-                                    -Integrantes titulares y suplentes del Tribunal de Contratación Pública.
-                                    <br>
-                                    -Consejeros del Consejo de Alta Dirección Pública.
-                                    <br>
-                                    -Los directores y ejecutivos principales de empresas públicas,
-                                    según lo definido por la Ley Nº 18.045.
-                                    <br>
-                                    -Directores de sociedades anónimas nombrados por el Estado o sus organismos.
-                                    <br>
-                                    -Miembros de las directivas de los partidos políticos.
-                                </span>
+                                Funciones públicas: Comprenden en esta categoría a jefes de Estado o de un
+                                Gobierno, políticos de alta jerarquía, funcionarios gubernamentales, judiciales
+                                o militares de alta jerarquía y altos ejecutivos de empresas estatales.
+                                <br>
+                                Se califican PEP a las siguientes personas:
+                                <br>
+                                -Presidente de la República, Senadores, Diputados y Alcaldes.
+                                <br>
+                                -Ministros de la Corte Suprema y Cortes de Apelaciones.
+                                <br>
+                                -Ministros de Estado, Subsecretarios, Intendentes, Gobernadores, Secretarios Regionales
+                                Ministeriales, Embajadores, Jefes Superiores de Servicio, tanto centralizados como
+                                descentralizados y el directivo superior inmediato que deba subrogar a cada uno de
+                                ellos.
+                                <br>
+                                -Comandantes en Jefe de las Fuerzas Armadas, Director General
+                                Carabineros, Director General de Investigaciones, y el oficial superior
+                                inmediato que deba subrogar a cada uno de ellos.
+                                <br>
+                                -Fiscal Nacional del Ministerio Público y Fiscales Regionales.
+                                <br>
+                                -Contralor General de la República Consejeros del Banco Central de Chile.
+                                <br>
+                                -Consejeros del Consejo de Defensa del Estado.
+                                <br>
+                                -Ministros del Tribunal Constitucional.
+                                <br>
+                                -Ministros del Tribunal de la Libre Competencia.
+                                <br>
+                                -Integrantes titulares y suplentes del Tribunal de Contratación Pública.
+                                <br>
+                                -Consejeros del Consejo de Alta Dirección Pública.
+                                <br>
+                                -Los directores y ejecutivos principales de empresas públicas,
+                                según lo definido por la Ley Nº 18.045.
+                                <br>
+                                -Directores de sociedades anónimas nombrados por el Estado o sus organismos.
+                                <br>
+                                -Miembros de las directivas de los partidos políticos.
                             </p>
 
                         </div>
@@ -1076,33 +2137,551 @@
                         <br>
                         <br>
                         <br>
-                        <div class="row-md-9">
-                            <button type="button" class="btn btn-outline-primary mb-4"
-                                id="mostrarDatosAccionistas">Recuperar Datos de Accionistas</button>
-                            <button type="button" class="btn btn-outline-primary mb-4"
-                                id="mostrarDatosBeneficiarios">Recuperar Datos de Beneficiarios</button>
-                            <div class="row-md-6" id="recuperarDatosPEP">
-                                <br>
-                                <h5 style="font-weight: bold;">Accionistas : </h5>
-                                <br>
-                                <div id="datosAccionistasRecuperados">
-                                    <!-- Contenido del div aquí -->
-                                    <br>
-                                </div>
-                                <br>
-                                <h5 style="font-weight: bold;">Beneficiarios Finales : </h5>
-                                <br>
-                                <div id="datosBeneficiariosRecuperados">
-                                    <!-- Contenido del div aquí -->
-                                    <br>
-                                </div>
+                        <h4 style="font-weight: bold;">Accionistas : </h4>
+                        <br>
+                        <br>
+                        <div id="datosAccionistasRecuperados" class="row">
+                            <div class="col-md-6">
+                                <label for="razonAccio" class="form-label">RUT (1)</label>
+                                <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (1)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomCompletoAccio">
                             </div>
                             <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el accionista (1) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="razonAccio" class="form-label">RUT (2)</label>
+                                <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (2)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomCompletoAccio">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el accionista (2) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--accio 3-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="razonAccio" class="form-label">RUT (3)</label>
+                                <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (3)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomCompletoAccio">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el accionista (3) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--accio 4-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="razonAccio" class="form-label">RUT (4)</label>
+                                <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (4)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomCompletoAccio">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el accionista (4) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--accio 5-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="razonAccio" class="form-label">RUT (5)</label>
+                                <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (5)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomCompletoAccio">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el accionista (5) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--accio 6-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="razonAccio" class="form-label">RUT (6)</label>
+                                <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (6)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomCompletoAccio">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el accionista (6) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--accio 7-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="razonAccio" class="form-label">RUT (7)</label>
+                                <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (7)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomCompletoAccio">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el accionista (7) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <hr>
+                        <br>
+                        <h4 style="font-weight: bold;">Beneficiarios Finales : </h4>
+                        <br>
+                        <br>
+                        <div id="datosBeneficiariosRecuperados" class="row">
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el beneficiario (1) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--benef 2-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (2)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (2)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el beneficiario (2) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--benef 3-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (3)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (3)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el beneficiario (3) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--benef 4-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (4)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (4)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el beneficiario (4) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--benef 5-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (5)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (5)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el beneficiario (5) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--benef 6-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (6)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (6)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el beneficiario (6) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br> <!--benef 7-->
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (7)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (7)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Es el beneficiario (7) considerado PEP?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
+                            </div>
                         </div>
                         <br>
                         <br>
                         <br>
                         <hr>
+                        <br>
                         <h2>MANTENCIÓN DE REGISTROS : </h2> <!-- 17 -->
                         <br>
                         <br>
@@ -1194,12 +2773,7 @@
                                 inversión sean adoptadas por un Inversionista Calificado de acuerdo a las
                                 consideraciones
                                 de esta Norma.
-
-
-
-                                </span>
                             </p>
-
                         </div>
                         <br>
                         <br>
@@ -1282,7 +2856,8 @@
                         <br>
                         <hr>
                         <br>
-                        <h2>DECLARACIÓN INVERSIONISTA CALIFICADO : </h2> <!-- 18 -->
+                        <h2>DECLARACIÓN INVERSIONISTA <br> CALIFICADO : </h2> <!-- 18 -->
+                        <br>
                         <br>
                         <br>
                         <br>
@@ -1292,25 +2867,20 @@
                                     <div class="form-check form-check-inline">
                                         <label style="padding-right: 5px;">Declaro ser</label>
                                         <input name="declaroInversionista" class="form-check-input" type="radio"
-                                            value="0" id="declaroInversionSer" disabled>
+                                            value="0" id="declaroInversionSer">
                                     </div>
                                 </div>
                                 <div class="input-group-text">
                                     <div class="form-check form-check-inline">
                                         <label style="padding-right: 5px;">No ser</label>
                                         <input name="declaroInversionista" class="form-check-input" type="radio"
-                                            value="1" id="declaroInversionNoSer" disabled>
+                                            value="1" id="declaroInversionNoSer">
                                     </div>
                                 </div>
                                 <input type="text" readonly class="form-control" value="Inversionista Calificado"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
                             </div>
                         </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-
                         <br>
                         <br>
                         <br>
@@ -1346,27 +2916,14 @@
                                     <tr>
                                         <th scope="row">Fecha de Declaración </th>
                                         <td>
-                                            <span id="fechaCRS" class="form-control"
-                                                style="font-weight: bold; font-size: large;"></span>
-
-                                            <script> // Obtener la fecha actual
-                                                const fechaCRSSpan = document.getElementById("fechaCRS");
-                                                const dateCRS = new Date();
-                                                const formattedDateCRS = dateCRS.toLocaleDateString("es-CL");
-                                                fechaCRSSpan.textContent = formattedDateCRS;
-                                            </script>
+                                            <input type="text" id="nacionalidadCRS" style="width: 380px;">
                                         </td>
                                     </tr>
                                 </tbody>
                             </table>
                         </div>
                         <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
                         <div class="row-md-9">
-                            <br>
                             <br>
                             <div class="input-group text-center">
                                 <input type="text" readonly class="form-control"
@@ -1389,9 +2946,9 @@
                             </div>
                             <br>
                         </div>
-
-                        <div id="respuestaSi" style="display: none;">
-                            <h4>Si responde "Si", favor responda lo siguiente:</h4>
+                        <div id="respuestaSi">
+                            <h4 style="font-weight: bold;">Si responde "Si", favor responda lo siguiente:</h4>
+                            <br>
                             <div class="row">
                                 <div class="col-md-6 pais-tax1">
                                     <div class="col-md-12">
@@ -1399,11 +2956,15 @@
                                         <input type="text" name="paisFiscal" "País" class="form-control"
                                             id="paisFiscal">
                                     </div>
+                                    <br>
                                     <div class="col-md-12">
                                         <label for="taxID" class="form-label">Tax ID de domicilio tributario</label>
                                         <input type="text" name="taxID" "Tax ID" class="form-control" id="taxID">
                                     </div>
                                 </div>
+                                <br>
+                                <br>
+                                <br>
                                 <div class="col-md-6 pais-tax2">
                                     <div class="col-md-12">
                                         <label for="paisFiscal2" class="form-label">País (2) de domicilio
@@ -1411,6 +2972,7 @@
                                         <input type="text" name="paisFiscal2" "País (2)" class="form-control"
                                             id="paisFiscal2">
                                     </div>
+                                    <br>
                                     <div class="col-md-12">
                                         <label for="taxID2" class="form-label">Tax ID (2) de domicilio
                                             tributario</label>
@@ -1449,41 +3011,554 @@
                                     <input name="preguntaB" class="form-check-input mt-1" type="radio" value="1"
                                         id="preguntaBNo">
                                 </div>
-                            </div>
-                            <div class="col-md-6" id="DivpqPreguntaB" style="display: none;">
-                                <div class="input-group">
+                                <div class="input-group-text">
                                     <label class="input-group-text">Indique el porqué está exenta:</label>
-                                    <input type="text" id="pqPreguntaB" class="form-control">
+                                    <input type="text" id="pqPreguntaB" class="form-control" style="width: 350px;">
                                 </div>
                             </div>
+                        </div>
+                        <div class="input-group text-center">
+                            <input type="text" readonly class="form-control"
+                                value="C- A continuación, debe completar la información de los accionistas y/o beneficiarios finales."
+                                style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <hr>
+                        <h2>Identificar Residencia Fiscal</h2> <!--15-->
+                        <br>
+                        <br>
+                        <h4 style="font-weight: bold;">Accionistas : </h4>
+                        <br>
+                        <br>
+                        <div id="datosResidenciaAccioRecuperados">
+                            <div id="datosAccionistasRecuperados" class="row">
+                                <div class="col-md-6">
+                                    <label for="razonAccio" class="form-label">RUT (1)</label>
+                                    <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nomCompletoAccio" class="form-label">Nombre Completo (1)</label>
+                                    <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                        id="nomCompletoAccio">
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group text-center">
+                                    <input type="text" readonly class="form-control"
+                                        value="Tiene el accionista (1) Residencia Fiscal en extranjero?"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">Si</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="0" id="accionistaBenefSi">
+                                        </div>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">No</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="1" id="accionistaBenefNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <br>
+                                </div>
+                                <hr>
+                                <br>
+                                <div class="col-md-6">
+                                    <label for="razonAccio" class="form-label">RUT (2)</label>
+                                    <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nomCompletoAccio" class="form-label">Nombre Completo (2)</label>
+                                    <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                        id="nomCompletoAccio">
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group text-center">
+                                    <input type="text" readonly class="form-control"
+                                        value="Tiene el accionista (2) Residencia Fiscal en extranjero?"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">Si</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="0" id="accionistaBenefSi">
+                                        </div>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">No</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="1" id="accionistaBenefNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <br> <!--accio 3-->
+                                </div>
+                                <hr>
+                                <br>
+                                <div class="col-md-6">
+                                    <label for="razonAccio" class="form-label">RUT (3)</label>
+                                    <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nomCompletoAccio" class="form-label">Nombre Completo (3)</label>
+                                    <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                        id="nomCompletoAccio">
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group text-center">
+                                    <input type="text" readonly class="form-control"
+                                        value="Tiene el accionista (3) Residencia Fiscal en extranjero?"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">Si</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="0" id="accionistaBenefSi">
+                                        </div>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">No</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="1" id="accionistaBenefNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <br> <!--accio 4-->
+                                </div>
+                                <hr>
+                                <br>
+                                <div class="col-md-6">
+                                    <label for="razonAccio" class="form-label">RUT (4)</label>
+                                    <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nomCompletoAccio" class="form-label">Nombre Completo (4)</label>
+                                    <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                        id="nomCompletoAccio">
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group text-center">
+                                    <input type="text" readonly class="form-control"
+                                        value="Tiene el accionista (4) Residencia Fiscal en extranjero?"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">Si</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="0" id="accionistaBenefSi">
+                                        </div>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">No</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="1" id="accionistaBenefNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <br> <!--accio 5-->
+                                </div>
+                                <hr>
+                                <br>
+                                <div class="col-md-6">
+                                    <label for="razonAccio" class="form-label">RUT (5)</label>
+                                    <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nomCompletoAccio" class="form-label">Nombre Completo (5)</label>
+                                    <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                        id="nomCompletoAccio">
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group text-center">
+                                    <input type="text" readonly class="form-control"
+                                        value="Tiene el accionista (5) Residencia Fiscal en extranjero?"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">Si</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="0" id="accionistaBenefSi">
+                                        </div>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">No</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="1" id="accionistaBenefNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <br> <!--accio 6-->
+                                </div>
+                                <hr>
+                                <br>
+                                <div class="col-md-6">
+                                    <label for="razonAccio" class="form-label">RUT (6)</label>
+                                    <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nomCompletoAccio" class="form-label">Nombre Completo (6)</label>
+                                    <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                        id="nomCompletoAccio">
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group text-center">
+                                    <input type="text" readonly class="form-control"
+                                        value="Tiene el accionista (6) Residencia Fiscal en extranjero?"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">Si</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="0" id="accionistaBenefSi">
+                                        </div>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">No</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="1" id="accionistaBenefNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <div>
+                                    <br> <!--accio 7-->
+                                </div>
+                                <hr>
+                                <br>
+                                <div class="col-md-6">
+                                    <label for="razonAccio" class="form-label">RUT (7)</label>
+                                    <input type="text" name="razonAccio" class="form-control" id="razonAccio">
+                                </div>
+                                <div class="col-md-6">
+                                    <label for="nomCompletoAccio" class="form-label">Nombre Completo (7)</label>
+                                    <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                        id="nomCompletoAccio">
+                                </div>
+                                <br>
+                                <br>
+                                <br>
+                                <br>
+                                <div class="input-group text-center">
+                                    <input type="text" readonly class="form-control"
+                                        value="Tiene el accionista (7) Residencia Fiscal en extranjero?"
+                                        style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">Si</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="0" id="accionistaBenefSi">
+                                        </div>
+                                    </div>
+                                    <div class="input-group-text">
+                                        <div class="form-check form-check-inline">
+                                            <label class="form-check-label">No</label>
+                                            <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                                value="1" id="accionistaBenefNo">
+                                        </div>
+                                    </div>
+                                </div>
+                                <br>
+                            </div>
+                            <br>
+                        </div>
+                        <hr>
+                        <br>
+                        <h4 style="font-weight: bold;">Beneficiarios Finales : </h4>
+                        <div id="datosResidenciaBenefRecuperados" class="row">
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (1)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (1)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
                             <div class="input-group text-center">
                                 <input type="text" readonly class="form-control"
-                                    value="C- A continuación, debe completar la información de los accionistas y/o beneficiarios finales."
+                                    value="¿Tiene el beneficiario (1) Residencia Fiscal en el extranjero?"
                                     style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
                             </div>
                             <hr>
-                            <h2>Identificar Residencia Fiscal</h2> <!--15-->
                             <br>
-                            <div class="row-md-9">
-                                <button type="button" class="btn btn-outline-primary mb-4"
-                                    id="mostrarResidenciaAccio">Recuperar Datos de Accionistas</button>
-                                <button type="button" class="btn btn-outline-primary mb-4"
-                                    id="mostrarResidenciaBeneficiarios">Recuperar Datos de Beneficiarios</button>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (2)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
                             </div>
-                            <div class="row-md-6" id="datosResidencia">
-                                <br>
-                                <h5 style="font-weight: bold;">Accionistas : </h5>
-                                <br>
-                                <div id="datosResidenciaAccioRecuperados">
-                                    <!-- Contenido del div aquí -->
-                                    <br>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (2)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Tiene el beneficiario (2) Residencia Fiscal en el extranjero?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
                                 </div>
-                                <br>
-                                <h5 style="font-weight: bold;">Beneficiarios Finales : </h5>
-                                <div id="datosResidenciaBenefRecuperados">
-                                    <!-- Contenido del div aquí -->
-                                    <br>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
                                 </div>
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (3)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (3)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Tiene el beneficiario (3) Residencia Fiscal en el extranjero?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (4)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (4)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Tiene el beneficiario (4) Residencia Fiscal en el extranjero?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (5)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (5)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Tiene el beneficiario (5) Residencia Fiscal en el extranjero?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (6)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (6)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Tiene el beneficiario (6) Residencia Fiscal en el extranjero?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
+                            </div>
+                            <hr>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="nomCompletoAccio" class="form-label">Nombre Completo (7)</label>
+                                <input type="text" name="nomCompletoAccio" "Nombre Completo" class="form-control"
+                                    id="nomBenef">
+                            </div>
+                            <div class="col-md-6">
+                                <label for="rutAccio" class="form-label">RUT (7)</label>
+                                <input type="text" name="rutAccio" class="form-control" id="rutBenef">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="input-group text-center">
+                                <input type="text" readonly class="form-control"
+                                    value="¿Tiene el beneficiario (7) Residencia Fiscal en el extranjero?"
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">Si</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="0" id="accionistaBenefSi">
+                                    </div>
+                                </div>
+                                <div class="input-group-text">
+                                    <div class="form-check form-check-inline">
+                                        <label class="form-check-label">No</label>
+                                        <input name="accionistaBenefPregunta" class="form-check-input" type="radio"
+                                            value="1" id="accionistaBenefNo">
+                                    </div>
+                                </div>
+                            </div>
+                            <div>
+                                <br>
                             </div>
                         </div>
                         <br>
@@ -1492,7 +3567,6 @@
                         <hr>
                         <br>
                         <h2>Declaraciones del Cliente : </h2> <!--15-->
-                        <br>
                         <br>
                         <div class="row mb-4">
                             <p id="texto7" class="texto-completo7">
@@ -1593,17 +3667,11 @@
                                 -Entidades o instituciones financieras que están constituidas en un país o
                                 jurisdicción no participante, pero que uno de los socios es
                                 residente fiscal de un país o jurisdicción participante.
-
                             </p>
-
                         </div>
-                        <br>
-                        <br>
-                        <br>
                         <hr>
                         <br>
-                        <h2>Declaración del Carácter de US ENTITY - FATCA : </h2> <!--15-->
-                        <br>
+                        <h2>Declaración del Carácter de <br> US ENTITY - FATCA : </h2> <!--15-->
                         <br>
                         <div class="row mb-4">
                             <p id="texto8" class="texto-completo8">
@@ -1623,12 +3691,8 @@
                                 b-Es controlada en más de un 10%, directa o indirectamente, por personas o
                                 entidades
                                 Estados Unidenses , afectas al impuesto en ese país.
-
                             </p>
-
                         </div>
-                        <br>
-                        <br>
                         <br>
                         <hr>
                         <br>
@@ -1651,8 +3715,8 @@
                         </div>
                         <br>
                         <br>
-                        <div id="respuestaFATCASi" style="display: none;">
-                            <h4 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI,
+                        <div id="respuestaFATCASi">
+                            <h4 style="font-weight:bolder;">Si la respuesta es SI,
                                 responda
                                 las siguientes preguntas:</h4>
                             <br>
@@ -1699,7 +3763,6 @@
                             <br>
                             <br>
                         </div>
-                        <br>
                         <div class="input-group text-center">
                             <input type="text" readonly class="form-control" value="¿Es la sociedad cliente US ENTITY?"
                                 style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
@@ -1718,17 +3781,61 @@
                                 </div>
                             </div>
                         </div>
-                        <div id="respuestaSociedadClienteUSSi" style="display: none;">
+                        <div id="respuestaSociedadClienteUSSi">
                             <br>
-                            <h5 style="font-weight:bolder; text-decoration: underline;">Si la respuesta es SI, ,
+                            <h5 style="font-weight:bolder;">Si la respuesta es SI, ,
                                 Usted
                                 puede
                                 ingresar su número de identificación tributaria estadounidense (TIN) : </h5>
                             <br>
                             <div class="input-group md-6">
-                                <span class="input-group-text">Número de Identificación Tributaria estadounidense
-                                    (TIN)</span>
+                                <span class="input-group-text" style="font-weight: bolder;">TIN</span>
                                 <input type="text" id="tin" class="form-control">
+                            </div>
+                        </div>
+                        <div>
+                            <br>
+                        </div>
+                        <hr>
+                        <br>
+                        <h2>Información Adicional (uso exclusivo de <br> AAM S.A. administradora de activos)</h2>
+                        <br>
+                        <br>
+                        <h3>Identificación del cliente : </h3>
+                        <br>
+                        <div class="row">
+                            <div class="col-md-6">
+                                <label for="razonPerfil" class="form-label">Razón Social</label>
+                                <input type="text" name="razon" class="form-control" id="razonPerfil">
+                            </div>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="rutPerfil" class="form-label">RUT</label>
+                                <input type="text" name="rut" class="form-control" id="rutPerfil">
+                            </div>
+                            <br>
+                            <br>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="clienteConocidoPregunta" class="form-label"
+                                    style="font-size: large;">Cliente
+                                    conocido por AAM S.A. o
+                                    referenciado por otro cliente:</label>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">Si</label>
+                                    <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
+                                        id="clienteConocidoSi" value="0">
+                                </div>
+                                <div class="form-check form-check-inline">
+                                    <label class="form-check-label" style="padding-right: 5px;">No</label>
+                                    <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
+                                        id="clienteConocidoNo" value="1">
+                                </div>
+                            </div>
+                            <br>
+                            <div class="col-md-6">
+                                <label for="referenciaPerfil" class="form-label">Referencia</label>
+                                <input type="text" name="referenciaPerfil" class="form-control" id="referenciaPerfil">
                             </div>
                         </div>
                         <div>
@@ -1738,8 +3845,7 @@
                         <br>
                         <h2>Validar la Información : </h2> <!--15-->
                         <br>
-                        <br>
-                        <div>
+                        <div class="row-mb-6">
                             <p>
                                 <span>
                                     Declaro que las informaciones proporcionadas en este formulario son verdaderas,
@@ -1758,332 +3864,6 @@
                                     a enviar oportunamente toda documentación adicional que fuere necesario para
                                     complementar este formulario y así dar cumplimiento a la
                                     normativa FATCA.”
-                                </span>
-                            </p>
-                            <br>
-                            <div class="input-group text-center">
-                                <div class="input-group-text">
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label" style="padding-right: 5px;">No</label>
-                                        <input name="" class="form-check-input" type="radio" id="" disabled>
-                                    </div>
-                                </div>
-                                <div class="input-group-text">
-                                    <div class="form-check form-check-inline">
-                                        <label class="form-check-label" style="padding-right: 5px;">Si</label>
-                                        <input name="" class="form-check-input" type="radio" id="">
-                                    </div>
-                                </div>
-                                <input type="text" readonly class="form-control"
-                                    value="He leído y confirmo la veracidad de toda la información ingresada"
-                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
-                            </div>
-                            <br>
-                            <br>
-                        </div>
-                        <hr>
-                        <br>
-                        <h2>Información Adicional (uso exclusivo de <br> AAM S.A. administradora de activos)</h2>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <h3>Identificación del cliente : </h3>
-                        <br>
-                        <br>
-                        <div class="col-md-6">
-                            <label for="razonPerfil" class="form-label">Razón Social</label>
-                            <input type="text" name="razon" class="form-control" id="razonPerfil">
-                        </div>
-                        <div class="col-md-6">
-                            <label for="rutPerfil" class="form-label">RUT</label>
-                            <input type="text" name="rut" class="form-control" id="rutPerfil">
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="col-md-6">
-                            <label for="clienteConocidoPregunta" class="form-label">Cliente conocido por AAM S.A. o
-                                referenciado por otro cliente:</label>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label" style="padding-right: 5px;">Si</label>
-                                <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
-                                    id="clienteConocidoSi" value="0">
-                            </div>
-                            <div class="form-check form-check-inline">
-                                <label class="form-check-label" style="padding-right: 5px;">No</label>
-                                <input name="clienteConocidoOpcion" class="form-check-input" type="radio"
-                                    id="clienteConocidoNo" value="1">
-                            </div>
-                        </div>
-                        <br>
-                        <div class="col-md-6">
-                            <label for="referenciaPerfil" class="form-label">Referencia</label>
-                            <input type="text" name="referenciaPerfil" "Referencia" class="form-control"
-                                id="referenciaPerfil">
-                        </div>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <br>
-                        <hr>
-                        <br>
-                        <h2 id="perfilRiesgo" style="text-align: center;">Perfil (riesgo) del Cliente</h2>
-                        <br>
-                        <br>
-                        <h4 style="text-decoration: underline;">Significado de cada categoría de Riesgo de Cliente :
-                        </h4>
-                        <br>
-                        <p id="texto10" class="texto-completo10">
-                            -Cliente Riesgo Bajo : Se procede con enrolamiento de cliente, no necesita autorización de
-                            Gerente General.
-                            <br>
-                            <br>
-                            -Cliente Riesgo Medio : Requiere autorización de enrolamiento por del Gerente General de
-                            la Administradora y obtener antecedentes exigidos en este
-                            nivel de riesgos.
-                            <br>
-                            <br>
-                            -Cliente Riesgo Alto : Requiere autorización de enrolamiento por del Gerente General de
-                            la Administradora y obtener antecedentes exigidos en este
-                            nivel de riesgos.
-                        </p>
-
-                        <div>
-                            <br>
-                        </div>
-                        <h4 style="text-decoration: underline;">Favor de responder el siguiente cuestonario para
-                            identificar su Perfil de Riesgo : </h4>
-                        <br>
-                        <br>
-                        <br>
-                        <div class="row-md-4">
-                            <h4>1- ¿Cuanto tiempo está dispuesto a esperar para obtener ganancias de su inversión?</h4>
-                            <br>
-                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil1Opcion1" onclick="sumar(this)">
-                            <label>Menos de 1 año</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil1Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">De 1 a 5 años</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil1" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil1Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">Más de 5 años</label>
-                            <br>
-                            <br>
-                            <hr>
-                            <h4>2- ¿Que porcentaje de sus ahorros estaria dispuesto a invertir?</h4>
-                            <br>
-                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil2Opcion1" onclick="sumar(this)">
-                            <label>Menos del 30%</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil2Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">Entre 30% y 60&</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil2" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil2Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">Más del 60%</label>
-                            <br>
-                            <br>
-                            <hr>
-                            <h4>3- ¿Cual es el objetivo principal de su inversión?</h4>
-                            <br>
-                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil3Opcion1" onclick="sumar(this)">
-                            <label>Asegurar y mantener la capital invertida</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil3Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">Aumentar su patrimonio, con retornos estables</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil3" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil3Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">Que la inversion aumente sin importar los riesgos de
-                                esta</label>
-                            <br>
-                            <br>
-                            <hr>
-                            <h4>4- ¿Como ha generado el dinero que desea invertir?</h4>
-                            <br>
-                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil4Opcion1" onclick="sumar(this)">
-                            <label>Mediante trabajo</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil4Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">Mediante trabajo, más algunos ahorros</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil4" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil4Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">De otras rentas no relacionadas con las anteriores
-                                opciones</label>
-                            <br>
-                            <br>
-                            <hr>
-                            <h4>5- ¿Con que opción describiria su grado de conocimiento en inversiones?</h4>
-                            <br>
-                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil5Opcion1" onclick="sumar(this)">
-                            <label>Bajo</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil5Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">Medio</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil5" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil5Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">Alto</label>
-                            <br>
-                            <br>
-                            <hr>
-                            <h4>6- Con cual de las siguientes frases se identifica <br> de mejor manera : </h4>
-                            <br>
-                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil6Opcion1" onclick="sumar(this)">
-                            <label>"Invertiría mi dinero en instrumentos con poco riesgo, <br> aunque su rentabilidad
-                                sea
-                                baja"</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil6Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">"Decidiria buscar un equilibrio en mi inversion, <br>
-                                invertiria en intrumentos de bajo riesgo, con rentabilidad baja <br> y otra, en
-                                instrumentos
-                                más riesgosos, con una mayor rentabilidad "</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil6" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil6Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">"Invertiria un gran cantidad de dinero en instrumentos
-                                de alto riesgo, <br> aunque esto signifique asumir mayores riesgos"</label>
-                            <br>
-                            <br>
-                            <hr>
-                            <h4>7- Si su inversión comienza a perder valor, ¿que haría?</h4>
-                            <br>
-                            <input name="preguntaPerfil7" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil7Opcion1" onclick="sumar(this)">
-                            <label>Vender de forma inmediata</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil7" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil7Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">Consultar con un experto sobre que decisión
-                                tomar</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil7" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil7Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">Asumiría las perdidas en el corto plazo y esperaria
-                                obtener <br> ganacias en el largo plazo</label>
-                            <br>
-                            <br>
-                            <hr>
-                            <h4>8- La palabra riesgo para usted significa : </h4>
-                            <br>
-                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil8Opcion1" onclick="sumar(this)">
-                            <label>Peligro</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil8Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">Inestabilidad</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil8" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil8Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">Oportunidad</label>
-                            <br>
-                            <br>
-                            <hr>
-                            <h4>9- ¿Como espera que se desarrolle su capacidad de ahorro en los proximos años? </h4>
-                            <br>
-                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="1"
-                                id="preguntaPerfil9Opcion1" onclick="sumar(this)">
-                            <label>Disminuirá</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="2"
-                                id="preguntaPerfil9Opcion2" onclick="sumar(this)">
-                            <label style="padding-right: 35px;">Se mantendrá estable</label>
-                            <br>
-                            <br>
-                            <input name="preguntaPerfil9" class="form-check-input mt-1" type="radio" value="3"
-                                id="preguntaPerfil9Opcion3" onclick="sumar(this)">
-                            <label style="padding-right: 29px;">Aumentará</label>
-                        </div>
-                        <div>
-                            <br>
-                        </div>
-                        <br>
-                        <hr>
-                        <br>
-                        <div id="divResultado">
-                            <button type="button" id="resultadoPerfilRiesgo" class="btn btn-outline-primary mb-4"
-                                onclick="mostrarResultado()">Mostrar Resultado del Cuestonario</button>
-                            <h5 style="font-weight: bold;">Resultado Perfil de Riesgo :</h5>
-                            <p id="perfilRiesgoRecuperado"></p>
-                            <p id="perfilRiesgoRecuperado"></p>
-                        </div>
-                        <div>
-                            <hr>
-                            <br>
-                            <h3>
-                                Indique su Perfil de Riesgo:
-                            </h3>
-                            <h5>*Este puede ser distinto al del resultado del cuestonario*</h5>
-                            <br>
-                            <div class="row">
-                                <div class="col-md-5">
-                                    <select class="form-select" name="selectPerfilRiesgo" id="opcionPerfilRiesgo">
-                                        <option value="" disabled>Seleccione 1 opción</option>
-                                        <option name="opcionPerfilRiesgo" id="opcionPerfilRiesgoBajo" value="0">
-                                            Bajo
-                                        </option>
-                                        <option name="opcionPerfilRiesgo" id="opcionPerfilRiesgoMedio" value="1">
-                                            Medio
-                                        </option>
-                                        <option name="opcionPerfilRiesgo" id="opcionPerfilRiesgoAlto" value="2">
-                                            Alto
-                                        </option>
-                                    </select>
-                                </div>
-                                <br>
-                                <br>
-                                <br>
-                            </div>
-                        </div>
-                        <hr>
-                        <br>
-                        <h2>Validar la Información : </h2> <!--15-->
-                        <br>
-                        <br>
-                        <div class="row-mb-6">
-                            <p>
-                                <span>
-                                    Certifico que la siguiente información contenida en el presente formulario es
-                                    verdadera y además ha sido verificada con la política de conocimiento a
-                                    su cliente de AAM S.A. (AAM S.A. Administradora de Activos considera todas las
-                                    entidades relacionadas a AAM S.A. Administradora de Activos), el
-                                    cliente hará con AAM S.A. Administradora de Activos operaciones con fondos lícitos
-                                    de acuerdo con lo establecido en las políticas de aceptación de
                                     fondos.
                                 </span>
                             </p>
@@ -2103,13 +3883,12 @@
                                 </div>
                                 <input type="text" readonly class="form-control"
                                     value="He leído y confirmo la veracidad de toda la información ingresada"
-                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline;">
+                                    style="text-align: center; font-size: large; font-weight:bolder; text-decoration: underline; width: 400px;">
                             </div>
                             <br>
                         </div>
                     </div><!--ultimo div-->
                     <br>
-                    <button id="generarPDF" type="reset" class="btn btn-primary mb-4">Generar PDF</button>
                 </form>
             </div>
         </div>
