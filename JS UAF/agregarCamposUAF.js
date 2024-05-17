@@ -27,7 +27,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
       clienteIndex++;
     } else {
-      alert('El máximo de beneficiarios finales es de 6')
+      alert('El máximo de beneficiarios finales es de 7')
     }
   }
 
